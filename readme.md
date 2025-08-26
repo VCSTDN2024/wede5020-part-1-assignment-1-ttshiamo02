@@ -57,6 +57,25 @@ bat-bakery/
 ├── contact.html        # Contact form and location
 └── README.md           # This documentation
 
+## Screenshots
+HOMEPAGE
+<img width="500" height="500" alt="HOMEPAGE" src="https://github.com/user-attachments/assets/f9eb6fd3-92f5-4d21-8c8c-b362710bdd97" />
+
+ABOUT US
+<img width="500" height="500" alt="ABOUT ME" src="https://github.com/user-attachments/assets/054179be-7a97-4338-a409-2d8d8fa8d1de" />
+
+PRODUCTS
+<img width="500" height="500" alt="PRODUCTS" src="https://github.com/user-attachments/assets/0dffb1b8-4356-4147-8b10-77447567e082" />
+
+SERVICES
+<img width="500" height="500" alt="SERVICES" src="https://github.com/user-attachments/assets/fd4bc311-c226-43ac-9cb4-236c09ff2e06" />
+
+CONTACT
+<img width="700" height="500" alt="CONTACT" src="https://github.com/user-attachments/assets/6112d716-abb5-4ca4-8294-428d97b3bd6d" />
+
+LOCATION
+<img width="600" height="400" alt="LOCATION" src="https://github.com/user-attachments/assets/de14e583-d6bc-49f4-aae4-7e1e484d50f8" />
+
 
 ## Brand Identity
 
