@@ -4,8 +4,6 @@ A spooky-themed bakery website HTML structure for night owls, insomniacs, and de
 
 ## Project Overview
 
-This project contains HTML-only versions of all Bat Bakery website pages.
-
 ### HTML Structure Overview
 
 - **index.html** - Homepage with hero section and featured products
