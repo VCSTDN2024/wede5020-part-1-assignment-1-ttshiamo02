@@ -8,7 +8,6 @@ A spooky-themed bakery website for night owls, insomniacs, and dessert rebels wh
 
 This project is a fully-styled, responsive website for Bat Bakery, complete with HTML structure, CSS styling, and interactive features across all 5 pages.
 
-### Pages Overview
 
 ### HTML Structure Overview
 
