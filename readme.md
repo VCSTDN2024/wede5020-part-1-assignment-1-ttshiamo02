@@ -113,30 +113,27 @@ bat-bakery/
 
 ## CSS Screenshots
 
+# CSS Screenshots
+
 ## HOMEPAGE
-<img width="500" height="500" alt="HOMEPAGE" src="![alt text](image.png)" />
+![HOMEPAGE](Images/CSS HOMEPAGE.png)
 
-
-## ABOUT US
-<img width="500" height="500" alt="ABOUT US" src="![alt text](image-1.png)" />
-
+## ABOUT US  
+![ABOUT US](Images/CSS ABOUT.png)
 
 ## PRODUCTS
-<img width="500" height="500" alt="PRODUCT" src="![alt text](image-2.png)" />
-
+![PRODUCTS](Images/CSS PRODUCTS.png)
 
 ## SERVICES
-<img width="500" height="500" alt="SERVICES" src="![alt text](image-3.png)" />
-
+![SERVICES](Images/CSS SERVICES.png)
 
 ## CONTACT US
-<img width="500" height="500" alt="CONTACT US" src="![alt text](image-4.png)" />
-
+![CONTACT US](Images/CSS CONTACT.png)
 
 ## LOCATION
-<img width="500" height="500" alt="LOCATION" src="![alt text](image-5.png)" />
+![LOCATION](Images/CSS LOCATION.png)
 
-
+#
 
 ## Brand Identity
 
