@@ -4,13 +4,11 @@ A spooky-themed bakery website for night owls, insomniacs, and dessert rebels wh
 
 ## Project Overview
 
-<<<<<<< HEAD
 This project is a fully-styled, responsive website for Bat Bakery, complete with HTML structure, CSS styling, and interactive features across all 5 pages.
 
 ### Pages Overview
-=======
+
 ### HTML Structure Overview
->>>>>>> 2c8b9942f38e7739c5d2c386e021dda404d616ef
 
 - **index.html** - Homepage with hero section and featured products
 - **about.html** - About the bakery, founding story, and team profiles
@@ -83,16 +81,17 @@ bat-bakery/
 ├── Images/                 # Product and team images
 ├── README.md               # This file
 
-<<<<<<< HEAD
+
 ```
-=======
-## Screenshots
+
+## HTML Screenshots
+
    ## HOMEPAGE
 <img width="500" height="500" alt="HOMEPAGE" src="https://github.com/user-attachments/assets/f9eb6fd3-92f5-4d21-8c8c-b362710bdd97" />
 
 
    ## ABOUT US
-<img width="500" height="500" alt="ABOUT ME" src="https://github.com/user-attachments/assets/054179be-7a97-4338-a409-2d8d8fa8d1de" />
+<img width="500" height="500" alt="ABOUT US" src="https://github.com/user-attachments/assets/054179be-7a97-4338-a409-2d8d8fa8d1de" />
 
 
    ## PRODUCTS
@@ -103,15 +102,41 @@ bat-bakery/
 <img width="500" height="500" alt="SERVICES" src="https://github.com/user-attachments/assets/fd4bc311-c226-43ac-9cb4-236c09ff2e06" />
 
 
-   ## CONTACT
-<img width="700" height="500" alt="CONTACT" src="https://github.com/user-attachments/assets/6112d716-abb5-4ca4-8294-428d97b3bd6d" />
+   ## CONTACT US
+<img width="700" height="500" alt="CONTACT US" src="https://github.com/user-attachments/assets/6112d716-abb5-4ca4-8294-428d97b3bd6d" />
 
 
  ##  LOCATION
 <img width="600" height="400" alt="LOCATION" src="https://github.com/user-attachments/assets/de14e583-d6bc-49f4-aae4-7e1e484d50f8" />
 
 
->>>>>>> 2c8b9942f38e7739c5d2c386e021dda404d616ef
+
+## CSS Screenshots
+
+## HOMEPAGE
+<img width="500" height="500" alt="HOMEPAGE" src="![alt text](image.png)" />
+
+
+## ABOUT US
+<img width="500" height="500" alt="ABOUT US" src="![alt text](image-1.png)" />
+
+
+## PRODUCTS
+<img width="500" height="500" alt="PRODUCT" src="![alt text](image-2.png)" />
+
+
+## SERVICES
+<img width="500" height="500" alt="SERVICES" src="![alt text](image-3.png)" />
+
+
+## CONTACT US
+<img width="500" height="500" alt="CONTACT US" src="![alt text](image-4.png)" />
+
+
+## LOCATION
+<img width="500" height="500" alt="LOCATION" src="![alt text](image-5.png)" />
+
+
 
 ## Brand Identity
 
@@ -280,7 +305,6 @@ npx http-server
 
 ## License
 
-<<<<<<< HEAD
 This project is created for educational purposes. All content and designs are original.
 
 ## Contact
@@ -292,10 +316,3 @@ For questions about this project:
 ---
 
 *Baked in the moonlight with HTML, CSS, and a touch of gothic magic* 🦇
-=======
-### Content Tone
-- Playful and mysterious
-- Professional but approachable
-- Community-focused
-- Inclusive and welcoming to nocturnal customers
->>>>>>> 2c8b9942f38e7739c5d2c386e021dda404d616ef
