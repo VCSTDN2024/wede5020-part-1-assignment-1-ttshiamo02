@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bat Bakery | Baked in the Moonlight</title>
-    
+    <title>Our Story | Bat Bakery</title>
+
+    <link rel="stylesheet" href="about.css">
+
 </head>
 <body>
-    <!-- Main navigation header -->
-    <header>
+    <header class="site-header">
         <div class="container">
-            <div class="header-content">
-                <!-- Logo with bat element -->
+            <div class="header-container">
                 <div class="logo">
-                    <div class="bat-logo">🦇</div>
-                    <div class="logo-text">
-                        <h1>BAT BAKERY</h1>
-                        <p class="tagline">Baked in the Moonlight</p>
-                    </div>
+                    <div class="logo-img">🦇</div>
+                    BAT BAKERY
                 </div>
-                
-                <!-- Main navigation menu -->
-                <nav>
+                <nav class="main-navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -30,107 +25,117 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
     
-    <!-- Hero section with main messaging -->
-    <section class="hero">
+    <section class="about-hero">
         <div class="container">
-            <h2>We rise when the sun sets</h2>
-            <p>Night shift workers, insomniacs, and dessert rebels—welcome to your midnight sanctuary</p>
-            <a href="products.html" class="btn">See Tonight's Fresh Bakes</a>
+            <h2>Our Nocturnal Story</h2>
         </div>
     </section>
     
-    <!-- Featured products section -->
-    <section class="featured">
+    <section class="about-content">
         <div class="container">
-            <h2 class="section-title">Tonight's Specials</h2>
-            
-        
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="Images/Brownies white chocolate.jpg" alt="Espresso Brownies">
-                    <div class="product-info">
-                        <h3>Moonlit Espresso Brownies</h3>
-                        <p>Rich, fudgy brownies with a kick of espresso to keep you going through the night</p>
-                        <span class="price">R45</span>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Why "Bat Bakery"?</h2>
+                    <p>Because bats are the unsung heroes of the night—just like our bakers. Founded by three night-owl sisters in Johannesburg, we cater to those who thrive when the sun goes down.</p>
+                    
+                    <p>Our journey began in a small apartment kitchen, where we baked through the night to satisfy our own midnight cravings. Word spread quickly among fellow night owls, and soon we were supplying treats to local coffee shops that stayed open late.</p>
+                    
+                    <h2>Our Values</h2>
+                    <ul class="bat-list">
+                        <li>Quality ingredients sourced from local suppliers</li>
+                        <li>Freshly baked goods every evening</li>
+                        <li>50% of our menu is vegan or gluten-free</li>
+                        <li>Compostable packaging and zero food waste</li>
+                        <li>A welcoming space for all creatures of the night</li>
+                    </ul>
                 </div>
-                
-                <div class="product-card">
-                    <img src="Images/download (1).jpeg" alt="Vampire Garlic Bread">
-                    <div class="product-info">
-                        <h3>Vampire's Kiss Garlic Bread</h3>
-                        <p>Vegan garlic bread with roasted garlic and herbs—so good it's scary!</p>
-                        <span class="price">R65</span>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <img src="Images/Red valvet spider brownie.jpeg" alt="Moon-shaped Shortbread">
-                    <div class="product-info">
-                        <h3>Witch's Moon Shortbread</h3>
-                        <p>Buttery shortbread cookies in crescent moon shapes—perfect with midnight tea</p>
-                        <span class="price">R35</span>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
+                <div class="about-image">
+                    <img src="Images/download (5).jpeg" alt="Bat Bakery kitchen at night">
                 </div>
             </div>
         </div>
     </section>
     
-    
-    <footer>
+    <section class="mission-section">
         <div class="container">
-            <div class="footer-content">
-                <!-- Quick links column -->
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Menu</a></li>
-                        <li><a href="services.html">Baking Classes</a></li>
-                        <li><a href="contact.html">Order Online</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact information column -->
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <ul>
-                        <li>13 Bat Lane, Melville</li>
-                        <li>Johannesburg, South Africa</li>
-                        <li>+27 81 344 2121</li>
-                        <li>hello@batbakery.co.za</li>
-                    </ul>
-                    <!-- Social media links -->
-                    <div class="social-links">
-                        <a href="#">📱</a>
-                        <a href="#">📸</a>
-                        <a href="#">👻</a>
-                    </div>
-                </div>
-                
-                <!-- Operating hours column -->
-                <div class="footer-section">
-                    <h3>Operating Hours</h3>
-                    <ul>
-                        <li>Monday - Friday: 4 PM - Midnight</li>
-                        <li>Saturday - Sunday: 3 PM - 1 AM</li>
-                        <li>Closed on Full Moon Nights</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Copyright information -->
-            <div class="copyright">
-                <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>To prove the best things happen after dark, one delicious bite at a time. We believe the night holds magic that daylight can't match, and we're here to fuel your nocturnal adventures with treats that are worth staying up for.</p>
             </div>
         </div>
-    </footer>
+    </section>
+    
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet the Night Bakers</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Images/Tshiamo 1.jpg" alt="Tshiamo Nkge">
+                    <h3>Tshiamo Nkge</h3>
+                    <p>Head Baker & Co-Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/Lindile Moilwa.jpg" alt="Lindile Moilwa">
+                    <h3>Lindile Moilwa</h3>
+                    <p>Pastry Chef & Co-Founder</p>
+                </div>
+                <div class="team-member">
+                    <img src="Images/Lotane Mmethi.jpg" alt="Lotane Mmethi">
+                    <h3>Lotane Mmethi</h3>
+                    <p>Midnight Delivery Specialist & Co-Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-container">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Menu</a></li>
+                            <li><a href="services.html">Baking Classes</a></li>
+                            <li><a href="contact.html">Order Online</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>13 Bat Lane, Melville</li>
+                            <li>Johannesburg, South Africa</li>
+                            <li>+27 81 344 2121</li>
+                            <li>hello@batbakery.co.za</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#">📱</a>
+                            <a href="#">📸</a>
+                            <a href="#">👻</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Operating Hours</h3>
+                        <ul>
+                            <li>Monday - Friday: 4 PM - Midnight</li>
+                            <li>Saturday - Sunday: 3 PM - 1 AM</li>
+                            <li>Closed on Full Moon Nights</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+                </div>
+            </div>
+        </footer>
 </body>
 </html>

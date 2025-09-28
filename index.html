@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bat Bakery | Baked in the Moonlight</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- Main navigation header -->
-    <header>
+    <header class="site-header">
         <div class="container">
-            <div class="header-content">
-                <!-- Logo with bat element -->
+            <div class="header-container">
                 <div class="logo">
-                    <div class="bat-logo">🦇</div>
-                    <div class="logo-text">
-                        <h1>BAT BAKERY</h1>
-                        <p class="tagline">Baked in the Moonlight</p>
-                    </div>
+                    <div class="logo-img">🦇</div>
+                    BAT BAKERY
                 </div>
-                
-                <!-- Main navigation menu -->
-                <nav>
+                <nav class="main-navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -29,6 +26,11 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -60,20 +62,20 @@
                 </div>
                 
                 <div class="product-card">
-                    <img src="Images/download (1).jpeg" alt="Vampire Garlic Bread">
+                    <img src="Images/download (1).jpeg" alt="Monster Munch Balls">
                     <div class="product-info">
-                        <h3>Vampire's Kiss Garlic Bread</h3>
-                        <p>Vegan garlic bread with roasted garlic and herbs—so good it's scary!</p>
+                        <h3>Monster Munch Balls</h3>
+                        <p>Chocolate chip cookie dough balls rolled in crushed Oreos ,so good it's scary!</p>
                         <span class="price">R65</span>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="Images/Red valvet spider brownie.jpeg" alt="Moon-shaped Shortbread">
+                    <img src="Images/Red valvet spider brownie.jpeg" alt="Bloody Good Brownies">
                     <div class="product-info">
-                        <h3>Witch's Moon Shortbread</h3>
-                        <p>Buttery shortbread cookies in crescent moon shapes—perfect with midnight tea</p>
+                        <h3>Bloody Good Brownies</h3>
+                        <p>Rich chocolate bars with siniter red velvet marble design</p>
                         <span class="price">R35</span>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
@@ -83,10 +85,9 @@
     </section>
     
     
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <!-- Quick links column -->
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
@@ -96,8 +97,6 @@
                         <li><a href="contact.html">Order Online</a></li>
                     </ul>
                 </div>
-                
-                <!-- Contact information column -->
                 <div class="footer-section">
                     <h3>Contact</h3>
                     <ul>
@@ -106,15 +105,12 @@
                         <li>+27 81 344 2121</li>
                         <li>hello@batbakery.co.za</li>
                     </ul>
-                    <!-- Social media links -->
                     <div class="social-links">
                         <a href="#">📱</a>
                         <a href="#">📸</a>
                         <a href="#">👻</a>
                     </div>
                 </div>
-                
-                <!-- Operating hours column -->
                 <div class="footer-section">
                     <h3>Operating Hours</h3>
                     <ul>
@@ -124,8 +120,6 @@
                     </ul>
                 </div>
             </div>
-            
-            <!-- Copyright information -->
             <div class="copyright">
                 <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
             </div>

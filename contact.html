@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Bat Bakery</title>
+
+    <link rel="stylesheet" href="contact.css">
+
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-            <div class="header-content">
+            <div class="header-container">
                 <div class="logo">
-                    <h1>BAT BAKERY</h1>
+                    <div class="logo-img">🦇</div>
+                    BAT BAKERY
                 </div>
-                <nav>
+                <nav class="main-navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -21,10 +25,14 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
-    
     <section class="contact-hero">
         <div class="container">
             <h2>Let's Connect</h2>
@@ -112,22 +120,46 @@
             <div class="map-container">
                 <h2>Our Location</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.123456789012!2d28.12345678901234!3d-26.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI0LjQiUyAyOMKwMDcnMjQuNCJF!5e0!3m2!1sen!2sza!4v1234567890123!5m2!1sen!2sza" class="map" allowfullscreen="" loading="lazy"></iframe>
-            </div>
         </div>
     </section>
     
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">BAT BAKERY</div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="products.html">Products</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="services.html">Baking Classes</a></li>
+                        <li><a href="contact.html">Order Online</a></li>
+                    </ul>
                 </div>
-                <p class="copyright">© 2025 Bat Bakery. All rights reserved.</p>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>13 Bat Lane, Melville</li>
+                        <li>Johannesburg, South Africa</li>
+                        <li>+27 81 344 2121</li>
+                        <li>hello@batbakery.co.za</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📸</a>
+                        <a href="#">👻</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 4 PM - Midnight</li>
+                        <li>Saturday - Sunday: 3 PM - 1 AM</li>
+                        <li>Closed on Full Moon Nights</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
             </div>
         </div>
     </footer>

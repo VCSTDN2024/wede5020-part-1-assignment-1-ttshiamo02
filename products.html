@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spooky Treats | Bat Bakery</title>
+
+    <link rel="stylesheet" href="products.css">
+
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-            <div class="header-content">
+            <div class="header-container">
                 <div class="logo">
-                    <h1>BAT BAKERY</h1>
+                    <div class="logo-img">🦇</div>
+                    BAT BAKERY
                 </div>
-                <nav>
+                <nav class="main-navigation">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
@@ -21,6 +25,11 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -37,27 +46,27 @@
             <h2>Haunted Brownies</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="Images/Spooky brownie.jpeg" alt="Graveyard Fudge Brownies">
+                    <img src="Images/Spooky brownie.jpeg" alt="Spooky Fudge Brownies">
                     <div class="product-info">
-                        <h3>Graveyard Fudge Brownies</h3>
+                        <h3> Spooky Fudge Brownies</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
-                        <p>Dense fudge brownies topped with edible tombstones and chocolate soil</p>
+                        <p>Dense fudge brownies topped with white chocolate on top</p>
                         <div class="price">R55</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
                 
                 <div class="product-card">
-                    <img src="Images/Brownies white chocolate.jpg" alt="Witch's Brew Brownies">
+                    <img src="Images/Spider web brownie.jpeg" alt=" Spider Web Brownies">
                     <div class="product-info">
-                        <h3>Witch's Brew Brownies</h3>
+                        <h3> Spider Web Brownies</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                         </div>
-                        <p>Purple velvet brownies with green "potion" swirls and candy eyeballs</p>
+                        <p> Rich, fudgy brownies with a kick of espresso to keep you going through the night!</p>
                         <div class="price">R60</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
@@ -71,8 +80,8 @@
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag gf">Gluten Free</span>
                         </div>
-                        <p>Mini brownies with white chocolate spiderweb designs and sugar spiders</p>
-                        <div class="price">R45 (6 pieces)</div>
+                        <p>Mini  Red Valvet brownies with white chocolate spiderweb designs and sugar spiders</p>
+                        <div class="price">R60 (6 pieces)</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -85,14 +94,14 @@
             <h2>Monster Muffins</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="Images/Raspberry muffins.jpeg" alt="Frankenstein's Matcha Muffins">
+                    <img src="Images/Raspberry muffins.jpeg" alt="Frankenstein's Blood Muffins">
                     <div class="product-info">
-                        <h3>Frankenstein's Matcha Muffins</h3>
+                        <h3>Frankenstein's Blood Muffins</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
-                        <p>Green tea muffins with bolted chocolate "neck" decorations</p>
+                        <p>Rich chocolate cupcakes with chocolate buttercream, fresh raspberry "blood," chocolate chip "pebbles". </p>
                         <div class="price">R40</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
@@ -106,7 +115,7 @@
                             <span class="product-tag spooky">Spooky</span>
                         </div>
                         <p>Blueberry muffins with "fur" textured tops and chocolate claw marks</p>
-                        <div class="price">R42</div>
+                        <div class="price">R45</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -120,7 +129,7 @@
                             <span class="product-tag gf">Gluten Free</span>
                         </div>
                         <p>Red velvet muffins with raspberry "blood" glaze and brain-shaped frosting</p>
-                        <div class="price">R48</div>
+                        <div class="price">R50</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -133,14 +142,14 @@
             <h2>Dangerous Donuts</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="Images/download.jpeg" alt="Vampire Bite Donuts">
+                    <img src="Images/download.jpeg" alt="SpiderBite Donuts">
                     <div class="product-info">
                         <h3>Vampire Bite Donuts</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
-                        <p>Chocolate donuts with "bite marks" and raspberry "blood" filling</p>
+                        <p>Chocolate donuts with "bite marks" and raspberry "blood"  filling</p>
                         <div class="price">R35 each</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
@@ -154,7 +163,7 @@
                             <span class="product-tag spooky">Spooky</span>
                         </div>
                         <p>Vanilla donuts with white chocolate ghosts and edible silver dust</p>
-                        <div class="price">R32 each</div>
+                        <div class="price">R35 each</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -162,13 +171,13 @@
                 <div class="product-card">
                     <img src="Images/Eye Donut.jpeg" alt="Witch Hat Donuts">
                     <div class="product-info">
-                        <h3>Witch Hat Donuts</h3>
+                        <h3>Crimson Spell Donuts</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag gf">Gluten Free</span>
                         </div>
-                        <p>Blackberry donuts with purple icing and chocolate witch hat toppers</p>
-                        <div class="price">R38 each</div>
+                        <p>Blackberry and chocolate donuts with purple icing and gummy eye toppers</p>
+                        <div class="price">R35 each</div>
                         <a href="#" class="btn">Add to Cart</a>
                     </div>
                 </div>
@@ -176,33 +185,44 @@
         </div>
     </section>
     
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Hours</h3>
-                    <p>4 PM - Midnight Daily</p>
-                    <p>Closed on Full Moon Nights</p>
-                </div>
+            <div class="footer-container">
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <a href="index.html">Home</a><br>
-                    <a href="products.html">Menu</a><br>
-                    <a href="contact.html">Order Online</a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="services.html">Baking Classes</a></li>
+                        <li><a href="contact.html">Order Online</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>13 Bat Lane, Melville</p>
-                    <p>Johannesburg, South Africa</p>
-                    <p>+27 81 344 2121</p>
+                    <ul>
+                        <li>13 Bat Lane, Melville</li>
+                        <li>Johannesburg, South Africa</li>
+                        <li>+27 81 344 2121</li>
+                        <li>hello@batbakery.co.za</li>
+                    </ul>
                     <div class="social-links">
                         <a href="#">📱</a>
                         <a href="#">📸</a>
                         <a href="#">👻</a>
                     </div>
                 </div>
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 4 PM - Midnight</li>
+                        <li>Saturday - Sunday: 3 PM - 1 AM</li>
+                        <li>Closed on Full Moon Nights</li>
+                    </ul>
+                </div>
             </div>
-            <p class="copyright">&copy; 2025 Bat Bakery. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+            </div>
         </div>
     </footer>
 </body>
