@@ -320,3 +320,7 @@ For questions about this project:
 ---
 
 *Baked in the moonlight with HTML, CSS, and a touch of gothic magic* 🦇
+
+
+## REFERENCES
+How to Stepup Visual Studio Code for Web Development| HTML,CSS and JavaScript ,2023.Available at:< How to Setup Visual Studio Code for Web Development | HTML, CSS, and JavaScript>[Accessed 2025]
