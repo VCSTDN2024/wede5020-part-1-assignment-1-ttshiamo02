@@ -113,27 +113,29 @@ bat-bakery/
 
 ## CSS Screenshots
 
-# CSS Screenshots
 
 ## HOMEPAGE
-![HOMEPAGE](Images/CSS HOMEPAGE.png)
+<img width="1540" height="1077" alt="css_homepage" src="https://github.com/user-attachments/assets/f2422853-39d3-4311-90df-e66dd9566624" />
 
 ## ABOUT US  
-![ABOUT US](Images/CSS ABOUT.png)
+<img width="1737" height="1078" alt="css_about" src="https://github.com/user-attachments/assets/f42c0df6-8b54-45a8-9574-a7d039431128" />
+
 
 ## PRODUCTS
-![PRODUCTS](Images/CSS PRODUCTS.png)
+<img width="1288" height="1078" alt="css_products" src="https://github.com/user-attachments/assets/189ec16c-0f4b-416e-ab82-42b2dd54c734" />
 
 ## SERVICES
-![SERVICES](Images/CSS SERVICES.png)
+
+<img width="1501" height="1078" alt="css_service" src="https://github.com/user-attachments/assets/05be13a8-89e8-4936-aeb7-07a80051740a" />
 
 ## CONTACT US
-![CONTACT US](Images/CSS CONTACT.png)
+<img width="1368" height="1078" alt="css_contact" src="https://github.com/user-attachments/assets/358c5451-fef8-42d2-9ad6-ccaf5a0ab7d7" />
+
 
 ## LOCATION
-![LOCATION](Images/CSS LOCATION.png)
+<img width="1508" height="1076" alt="css_location" src="https://github.com/user-attachments/assets/541273d8-a59e-4665-8fb0-01623494f14c" />
 
-#
+
 
 ## Brand Identity
 
