@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make an Enquiry | Bat Bakery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c1a4d;
+            --secondary-color: #8a2be2;
+            --accent-color: #ff6b6b;
+            --text-color: #f0e6ff;
+            --dark-bg: #1a1a2e;
+            --light-bg: #2d2d44;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .site-header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Creepster', cursive;
+            font-size: 1.8rem;
+            color: var(--text-color);
+        }
+
+        .logo-img {
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-navigation li {
+            margin-left: 1.5rem;
+        }
+
+        .main-navigation a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .main-navigation a:hover {
+            color: var(--accent-color);
+        }
+
+        .main-navigation a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .main-navigation a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .enquiry-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('Images/Scary Good Halloween Cupcakes to Impress Your Guests.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .enquiry-hero h1 {
+            font-family: 'Creepster', cursive;
+            font-size: 3rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .enquiry-hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .enquiry-content {
+            padding: 4rem 0;
+        }
+
+        .enquiry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .enquiry-info h2, .enquiry-form h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .enquiry-info h2::after, .enquiry-form h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .enquiry-info p {
+            margin-bottom: 2rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .service-accordion {
+            margin-bottom: 3rem;
+        }
+
+        .accordion {
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .accordion.active .accordion-content {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+
+        .accordion.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-content li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .price-examples, .workshop-details, .catering-options, .wholesale-info {
+            background: var(--dark-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+        }
+
+        .quote-calculator {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .quote-calculator h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .calc-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .calc-field label {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .calc-field select, .calc-field input {
+            padding: 0.8rem;
+            background: var(--dark-bg);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .calc-field select:focus, .calc-field input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+
+        .quote-result {
+            background: var(--dark-bg);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .quote-result h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .enquiry-form {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-intro {
+            margin-bottom: 2rem;
+            color: #ccc;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-step h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--dark-bg);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #ccc;
+            margin-top: 0.5rem;
+        }
+
+        .service-details-preview {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .preview-features {
+            margin-top: 1rem;
+        }
+
+        .dynamic-service-fields {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-field-group {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+        }
+
+        .enquiry-summary {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            width: auto;
+            margin-top: 0.2rem;
+        }
+
+        .text-link {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .submission-notice {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+
+        .submission-notice ol {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .submission-notice li {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .wizard-progress {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 2rem;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+
+        .progress-step.active {
+            opacity: 1;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .progress-step.active .step-number {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .site-footer {
+            background-color: var(--primary-color);
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Creepster', cursive;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .main-navigation ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .main-navigation.active ul {
+                display: flex;
+            }
+            
+            .main-navigation li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .main-navigation a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .enquiry-hero {
+                padding: 4rem 0;
+            }
+            
+            .enquiry-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .enquiry-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .enquiry-form {
+                padding: 2rem;
+            }
+            
+            .step-actions {
+                flex-direction: column;
+            }
+            
+            .wizard-progress {
+                gap: 1rem;
+            }
+            
+            .step-label {
+                font-size: 0.8rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .enquiry-grid {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <div class="logo-img">🦇</div>
+                    BAT BAKERY
+                </div>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section class="enquiry-hero">
+        <div class="container">
+            <h1>Make an Enquiry</h1>
+            <p>Interested in our specialized services, custom orders, or partnership opportunities? We'd love to help bring your spooky vision to life!</p>
+        </div>
+    </section>
+
+    <section class="enquiry-wizard">
+        <div class="container">
+            <div class="wizard-progress">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Service Type</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Details</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Review & Submit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="enquiry-content">
+        <div class="container">
+            <div class="enquiry-grid">
+                <div class="enquiry-info">
+                    <h2>What We Offer</h2>
+                    <p>Choose from our specialized services below. Each service includes personalized consultation and custom pricing based on your specific needs.</p>
+                    
+                    <div class="service-accordion">
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span>Custom Cakes & Special Orders</span>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>We specialize in gothic-inspired custom cakes for all occasions. From small birthday cakes to large wedding cakes, we can create something spooky and spectacular.</p>
+                                <ul>
+                                    <li>🎨 Custom designs and themes</li>
+                                    <li>🌱 Vegan and gluten-free options</li>
+                                    <li>📅 3-5 day notice required</li>
+                                    <li>💰 Starting from R350</li>
+                                    <li>📏 Sizes from 15cm to 30cm</li>
+                                </ul>
+                                <div class="price-examples">
+                                    <h4>Price Examples:</h4>
+                                    <p><strong>Small (15cm):</strong> R350 - R500<br>
+                                    <strong>Medium (20cm):</strong> R500 - R800<br>
+                                    <strong>Large (25cm+):</strong> R800 - R1500+</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span>Baking Workshops & Classes</span>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Join our nocturnal baking classes and learn to create spooky treats in our bat-themed kitchen.</p>
+                                <ul>
+                                    <li>🎂 Gothic Cupcake Decorating - R250</li>
+                                    <li>🍞 Vampire Bread Making - R300</li>
+                                    <li>🍪 Spooky Cookie Decorating - R200</li>
+                                    <li>👥 Private group sessions available</li>
+                                    <li>🎁 Perfect for team building & parties</li>
+                                </ul>
+                                <div class="workshop-details">
+                                    <h4>Group Discounts:</h4>
+                                    <p><strong>5-10 people:</strong> 10% off<br>
+                                    <strong>11-20 people:</strong> 15% off<br>
+                                    <strong>20+ people:</strong> Custom pricing</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span>Event Catering & Large Orders</span>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Let us cater your next event with our spooky treats. Perfect for corporate events, birthdays, and Halloween celebrations.</p>
+                                <ul>
+                                    <li>🏢 Corporate events</li>
+                                    <li>🎉 Birthday parties</li>
+                                    <li>🎃 Halloween celebrations</li>
+                                    <li>💒 Wedding dessert tables</li>
+                                    <li>💰 Starting from R65 per person</li>
+                                </ul>
+                                <div class="catering-options">
+                                    <h4>Package Options:</h4>
+                                    <p><strong>Basic:</strong> R65/person - Assorted treats<br>
+                                    <strong>Premium:</strong> R85/person - Themed dessert table<br>
+                                    <strong>Deluxe:</strong> R120/person - Full customization</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion">
+                            <div class="accordion-header">
+                                <span>Wholesale & Partnership</span>
+                                <span class="accordion-icon">+</span>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Interested in stocking Bat Bakery products? We partner with coffee shops, restaurants, and retailers.</p>
+                                <ul>
+                                    <li>🏪 Coffee shop partnerships</li>
+                                    <li>🍽️ Restaurant suppliers</li>
+                                    <li>🛍️ Retail product lines</li>
+                                    <li>📦 Bulk ordering available</li>
+                                    <li>🤝 Custom product development</li>
+                                </ul>
+                                <div class="wholesale-info">
+                                    <h4>Minimum Orders:</h4>
+                                    <p><strong>Initial order:</strong> R1500 minimum<br>
+                                    <strong>Regular orders:</strong> R800 minimum<br>
+                                    <strong>Delivery:</strong> Free for orders over R2000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-calculator">
+                        <h3>🦇 Quick Quote Estimator</h3>
+                        <div class="calculator-form">
+                            <div class="calc-field">
+                                <label for="service-type">Service Type:</label>
+                                <select id="service-type">
+                                    <option value="">Select service...</option>
+                                    <option value="custom-cake">Custom Cake</option>
+                                    <option value="workshop">Baking Workshop</option>
+                                    <option value="catering">Event Catering</option>
+                                    <option value="wholesale">Wholesale</option>
+                                </select>
+                            </div>
+                            <div class="calc-field">
+                                <label for="guest-count">Number of People:</label>
+                                <input type="number" id="guest-count" min="1" max="500" value="1">
+                            </div>
+                            <div class="calc-field">
+                                <label for="complexity">Complexity Level:</label>
+                                <select id="complexity">
+                                    <option value="simple">Simple</option>
+                                    <option value="standard" selected>Standard</option>
+                                    <option value="complex">Complex</option>
+                                    <option value="custom">Highly Custom</option>
+                                </select>
+                            </div>
+                            <div class="quote-result">
+                                <h4>Estimated Price: <span id="estimated-price">R0</span></h4>
+                                <small>* Final price may vary based on specific requirements</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="enquiry-form">
+                    <h2>Service Enquiry Form</h2>
+                    <p class="form-intro">Please provide detailed information about your request. The more details you share, the better we can assist you!</p>
+                    
+                    <form id="enquiryForm" action="#" method="POST" novalidate>
+                        <div class="form-step active" data-step="1">
+                            <h3>🦇 Step 1: Select Service Type</h3>
+                            
+                            <div class="form-group">
+                                <label for="enquiryType">Type of Enquiry *</label>
+                                <select id="enquiryType" name="enquiryType" required>
+                                    <option value="">Please select the service you're interested in...</option>
+                                    <option value="custom-cake">Custom Cake Order</option>
+                                    <option value="workshop">Baking Workshop</option>
+                                    <option value="catering">Event Catering</option>
+                                    <option value="wholesale">Wholesale Partnership</option>
+                                    <option value="other">Other Service</option>
+                                </select>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="service-details-preview" id="servicePreview" style="display: none;">
+                                <div class="preview-content">
+                                    <h4 id="previewTitle">Service Details</h4>
+                                    <p id="previewDescription">Loading service information...</p>
+                                    <div class="preview-features" id="previewFeatures"></div>
+                                </div>
+                            </div>
+
+                            <div class="step-actions">
+                                <button type="button" class="btn next-step" data-next="2">Next: Add Details →</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <h3>🌙 Step 2: Service Details</h3>
+                            
+                            <div class="form-group">
+                                <label for="enquiryName">Full Name *</label>
+                                <input type="text" id="enquiryName" name="name" required minlength="2" maxlength="50" 
+                                       placeholder="Enter your full name">
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="enquiryEmail">Email Address *</label>
+                                <input type="email" id="enquiryEmail" name="email" required 
+                                       placeholder="your.email@example.com">
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="enquiryPhone">Phone Number *</label>
+                                <input type="tel" id="enquiryPhone" name="phone" required 
+                                       pattern="[\+]?[0-9\s\-\(\)]{10,}" 
+                                       placeholder="+27 81 344 2121">
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="dynamic-service-fields">
+                                <div class="service-field-group cake-fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="cake-size">Cake Size</label>
+                                        <select id="cake-size" name="cake-size">
+                                            <option value="">Select size...</option>
+                                            <option value="small">Small (15cm) - Serves 8-12</option>
+                                            <option value="medium">Medium (20cm) - Serves 15-20</option>
+                                            <option value="large">Large (25cm) - Serves 25-30</option>
+                                            <option value="x-large">Extra Large (30cm+) - Serves 35+</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cake-flavor">Preferred Flavor</label>
+                                        <select id="cake-flavor" name="cake-flavor">
+                                            <option value="">Select flavor...</option>
+                                            <option value="chocolate">Dark Chocolate</option>
+                                            <option value="red-velvet">Red Velvet</option>
+                                            <option value="vanilla">Vanilla</option>
+                                            <option value="lemon">Lemon</option>
+                                            <option value="custom">Custom Flavor</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cake-theme">Theme/Design Ideas</label>
+                                        <input type="text" id="cake-theme" name="cake-theme" 
+                                               placeholder="e.g., Gothic wedding, Halloween, Bat-themed">
+                                    </div>
+                                </div>
+
+                                <div class="service-field-group workshop-fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="workshop-type">Workshop Type</label>
+                                        <select id="workshop-type" name="workshop-type">
+                                            <option value="">Select workshop...</option>
+                                            <option value="cupcake">Gothic Cupcake Decorating</option>
+                                            <option value="bread">Vampire Bread Making</option>
+                                            <option value="cookies">Spooky Cookie Decorating</option>
+                                            <option value="private">Private Group Session</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="participant-count">Number of Participants</label>
+                                        <input type="number" id="participant-count" name="participant-count" 
+                                               min="1" max="50" value="1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="preferred-date">Preferred Date</label>
+                                        <input type="date" id="preferred-date" name="preferred-date" 
+                                               min="">
+                                    </div>
+                                </div>
+
+                                <div class="service-field-group catering-fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="event-type">Event Type</label>
+                                        <select id="event-type" name="event-type">
+                                            <option value="">Select event type...</option>
+                                            <option value="corporate">Corporate Event</option>
+                                            <option value="birthday">Birthday Party</option>
+                                            <option value="wedding">Wedding</option>
+                                            <option value="halloween">Halloween Party</option>
+                                            <option value="other">Other Celebration</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="guest-count">Number of Guests</label>
+                                        <input type="number" id="guest-count" name="guest-count" 
+                                               min="10" max="500" value="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="event-date">Event Date</label>
+                                        <input type="date" id="event-date" name="event-date" 
+                                               min="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="budget-range">Budget Range (per person)</label>
+                                        <select id="budget-range" name="budget-range">
+                                            <option value="basic">Basic (R65-85)</option>
+                                            <option value="standard" selected>Standard (R85-120)</option>
+                                            <option value="premium">Premium (R120+)</option>
+                                            <option value="custom">Custom Budget</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventDate">Event/Required Date</label>
+                                <input type="date" id="eventDate" name="eventDate" 
+                                       min="">
+                                <div class="form-error"></div>
+                            </div>
+                            
+                            <div class="step-actions">
+                                <button type="button" class="btn-outline prev-step" data-prev="1">← Previous</button>
+                                <button type="button" class="btn next-step" data-next="3">Next: Review & Submit →</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <h3>📝 Step 3: Review & Submit</h3>
+                            
+                            <div class="enquiry-summary">
+                                <h4>Enquiry Summary</h4>
+                                <div class="summary-details" id="summaryDetails">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="enquiryMessage">Additional Details & Requirements *</label>
+                                <textarea id="enquiryMessage" name="message" 
+                                          placeholder="Please provide detailed information about your requirements, including any specific themes, dietary restrictions, special requests, or questions you might have..." 
+                                          required minlength="10" maxlength="2000"></textarea>
+                                <div class="char-count"><span id="char-counter">0</span>/2000 characters</div>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reference-images">Reference Images (Optional)</label>
+                                <input type="file" id="reference-images" name="reference-images" 
+                                       accept="image/*" multiple>
+                                <small>You can upload inspiration images for custom designs (max 5 images, 5MB each)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" id="newsletter" checked>
+                                    <span>Subscribe to our nocturnal newsletter for spooky updates, workshop announcements, and exclusive offers</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="terms" id="terms" required>
+                                    <span>I agree to the <a href="#" class="text-link">privacy policy</a> and understand that this enquiry does not guarantee availability or final pricing *</span>
+                                </label>
+                                <div class="form-error"></div>
+                            </div>
+
+                            <div class="submission-notice">
+                                <h4>🦇 What Happens Next?</h4>
+                                <ol>
+                                    <li>You'll receive a confirmation email immediately</li>
+                                    <li>Our team will review your enquiry within 24 hours</li>
+                                    <li>We'll contact you to discuss details and provide a formal quote</li>
+                                    <li>Once approved, we'll schedule your service or order</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="step-actions">
+                                <button type="button" class="btn-outline prev-step" data-prev="2">← Previous</button>
+                                <button type="submit" class="submit-btn" id="submitEnquiryBtn">
+                                    <span class="btn-text">Submit Enquiry</span>
+                                    <span class="btn-loading" style="display: none;">🦇 Processing...</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">🎉</div>
+            <h3>Enquiry Submitted Successfully!</h3>
+            <div class="success-details" id="successDetails">
+            </div>
+            <div class="modal-actions">
+                <button class="btn" onclick="closeSuccessModal()">Great, Thanks!</button>
+                <a href="services.html" class="btn-outline">Browse More Services</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="services.html">Baking Classes</a></li>
+                        <li><a href="contact.html">Order Online</a></li>
+                        <li><a href="enquiry.html">Enquiries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>13 Bat Lane, Melville</li>
+                        <li>Johannesburg, South Africa</li>
+                        <li>+27 81 344 2121</li>
+                        <li>hello@batbakery.co.za</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📸</a>
+                        <a href="#">👻</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 4 PM - Midnight</li>
+                        <li>Saturday - Sunday: 3 PM - 1 AM</li>
+                        <li>Closed on Full Moon Nights</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.main-navigation');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            }
+
+            const accordions = document.querySelectorAll('.accordion-header');
+            
+            accordions.forEach(accordion => {
+                accordion.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+
+            const enquiryType = document.getElementById('enquiryType');
+            const servicePreview = document.getElementById('servicePreview');
+            const previewTitle = document.getElementById('previewTitle');
+            const previewDescription = document.getElementById('previewDescription');
+            const previewFeatures = document.getElementById('previewFeatures');
+
+            const serviceDetails = {
+                'custom-cake': {
+                    title: 'Custom Cake Order',
+                    description: 'Perfect for birthdays, weddings, and special occasions. We create gothic-inspired masterpieces.',
+                    features: ['🎨 Custom designs and themes', '🌱 Vegan and gluten-free options', '📅 3-5 day notice required', '💰 Starting from R350']
+                },
+                'workshop': {
+                    title: 'Baking Workshop',
+                    description: 'Join our nocturnal baking classes and learn to create spooky treats.',
+                    features: ['🎂 Gothic Cupcake Decorating', '🍞 Vampire Bread Making', '🍪 Spooky Cookie Decorating', '👥 Private group sessions']
+                },
+                'catering': {
+                    title: 'Event Catering',
+                    description: 'Let us cater your next event with our spooky treats.',
+                    features: ['🏢 Corporate events', '🎉 Birthday parties', '🎃 Halloween celebrations', '💰 Starting from R65 per person']
+                },
+                'wholesale': {
+                    title: 'Wholesale Partnership',
+                    description: 'Stock Bat Bakery products in your establishment.',
+                    features: ['🏪 Coffee shop partnerships', '🍽️ Restaurant suppliers', '📦 Bulk ordering available', '🤝 Custom product development']
+                }
+            };
+
+            enquiryType.addEventListener('change', function() {
+                const selectedService = this.value;
+                
+                if (selectedService && serviceDetails[selectedService]) {
+                    const service = serviceDetails[selectedService];
+                    previewTitle.textContent = service.title;
+                    previewDescription.textContent = service.description;
+                    previewFeatures.innerHTML = service.features.map(feature => 
+                        `<div class="feature">${feature}</div>`
+                    ).join('');
+                    servicePreview.style.display = 'block';
+                    
+                    document.querySelectorAll('.service-field-group').forEach(group => {
+                        group.style.display = 'none';
+                    });
+                    
+                    if (selectedService === 'custom-cake') {
+                        document.querySelector('.cake-fields').style.display = 'block';
+                    } else if (selectedService === 'workshop') {
+                        document.querySelector('.workshop-fields').style.display = 'block';
+                    } else if (selectedService === 'catering') {
+                        document.querySelector('.catering-fields').style.display = 'block';
+                    }
+                } else {
+                    servicePreview.style.display = 'none';
+                }
+            });
+
+            const nextSteps = document.querySelectorAll('.next-step');
+            const prevSteps = document.querySelectorAll('.prev-step');
+            const formSteps = document.querySelectorAll('.form-step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+
+            nextSteps.forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = this.closest('.form-step');
+                    const nextStepNum = this.dataset.next;
+                    
+                    if (validateStep(currentStep.dataset.step)) {
+                        currentStep.classList.remove('active');
+                        document.querySelector(`.form-step[data-step="${nextStepNum}"]`).classList.add('active');
+                        
+                        progressSteps.forEach(step => {
+                            step.classList.remove('active');
+                            if (parseInt(step.dataset.step) <= parseInt(nextStepNum)) {
+                                step.classList.add('active');
+                            }
+                        });
+                        
+                        if (nextStepNum === '3') {
+                            updateSummary();
+                        }
+                    }
+                });
+            });
+
+            prevSteps.forEach(button => {
+                button.addEventListener('click', function() {
+                    const currentStep = this.closest('.form-step');
+                    const prevStepNum = this.dataset.prev;
+                    
+                    currentStep.classList.remove('active');
+                    document.querySelector(`.form-step[data-step="${prevStepNum}"]`).classList.add('active');
+                    
+                    progressSteps.forEach(step => {
+                        step.classList.remove('active');
+                        if (parseInt(step.dataset.step) <= parseInt(prevStepNum)) {
+                            step.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            function validateStep(step) {
+                if (step === '1') {
+                    if (!enquiryType.value) {
+                        alert('Please select a service type');
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function updateSummary() {
+                const summary = document.getElementById('summaryDetails');
+                const name = document.getElementById('enquiryName').value;
+                const email = document.getElementById('enquiryEmail').value;
+                const service = document.getElementById('enquiryType').options[document.getElementById('enquiryType').selectedIndex].text;
+                
+                summary.innerHTML = `
+                    <p><strong>Service:</strong> ${service}</p>
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                `;
+            }
+
+            const enquiryForm = document.getElementById('enquiryForm');
+            const successModal = document.getElementById('successModal');
+            const successDetails = document.getElementById('successDetails');
+
+            enquiryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('submitEnquiryBtn');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
+                
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline';
+                
+                setTimeout(() => {
+                    const name = document.getElementById('enquiryName').value;
+                    const service = document.getElementById('enquiryType').options[document.getElementById('enquiryType').selectedIndex].text;
+                    
+                    successDetails.innerHTML = `
+                        <p>Thank you <strong>${name}</strong> for your enquiry about our <strong>${service}</strong> service!</p>
+                        <p>We'll contact you within 24 hours to discuss your requirements and provide a formal quote.</p>
+                    `;
+                    
+                    successModal.classList.add('active');
+                    
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                }, 2000);
+            });
+
+            const quoteCalculator = document.getElementById('service-type');
+            const guestCount = document.getElementById('guest-count');
+            const complexity = document.getElementById('complexity');
+            const estimatedPrice = document.getElementById('estimated-price');
+
+            function updateQuote() {
+                const service = quoteCalculator.value;
+                const guests = parseInt(guestCount.value) || 1;
+                const complex = complexity.value;
+                
+                let basePrice = 0;
+                let multiplier = 1;
+                
+                switch(service) {
+                    case 'custom-cake':
+                        basePrice = 350;
+                        break;
+                    case 'workshop':
+                        basePrice = 250;
+                        break;
+                    case 'catering':
+                        basePrice = 65 * guests;
+                        break;
+                    case 'wholesale':
+                        basePrice = 1500;
+                        break;
+                    default:
+                        basePrice = 0;
+                }
+                
+                switch(complex) {
+                    case 'simple':
+                        multiplier = 0.8;
+                        break;
+                    case 'standard':
+                        multiplier = 1;
+                        break;
+                    case 'complex':
+                        multiplier = 1.5;
+                        break;
+                    case 'custom':
+                        multiplier = 2;
+                        break;
+                }
+                
+                const finalPrice = Math.round(basePrice * multiplier);
+                estimatedPrice.textContent = `R${finalPrice}`;
+            }
+
+            quoteCalculator.addEventListener('change', updateQuote);
+            guestCount.addEventListener('input', updateQuote);
+            complexity.addEventListener('change', updateQuote);
+
+            const messageTextarea = document.getElementById('enquiryMessage');
+            const charCounter = document.getElementById('char-counter');
+
+            messageTextarea.addEventListener('input', function() {
+                charCounter.textContent = this.value.length;
+            });
+
+            const today = new Date().toISOString().split('T')[0];
+            document.querySelectorAll('input[type="date"]').forEach(dateInput => {
+                dateInput.min = today;
+            });
+        });
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.remove('active');
+            document.getElementById('enquiryForm').reset();
+            document.querySelector('.form-step[data-step="1"]').classList.add('active');
+            document.querySelector('.form-step[data-step="2"]').classList.remove('active');
+            document.querySelector('.form-step[data-step="3"]').classList.remove('active');
+            
+            document.querySelectorAll('.progress-step').forEach(step => {
+                step.classList.remove('active');
+                if (step.dataset.step === '1') {
+                    step.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

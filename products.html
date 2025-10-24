@@ -4,9 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spooky Treats | Bat Bakery</title>
-
     <link rel="stylesheet" href="products.css">
+    <style>
+        .product-filters {
+            padding: 2rem 0;
+            background: var(--light-bg);
+            text-align: center;
+        }
 
+        .product-search {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 25px;
+            background: var(--dark-bg);
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+            background: var(--dark-bg);
+            border: 2px solid var(--secondary-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .results-count {
+            color: #ccc;
+        }
+
+        .cart-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: var(--light-bg);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: 'Creepster', cursive;
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .cart-total {
+            padding: 1.5rem;
+            background: var(--dark-bg);
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .checkout-btn {
+            margin: 0 1.5rem 1.5rem;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -40,49 +239,62 @@
             <p>Freshly baked after dark for your spooky cravings</p>
         </div>
     </section>
+
+    <section class="product-filters">
+        <div class="container">
+            <input type="text" class="product-search" placeholder="🔍 Search treats...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="spooky">Spooky</button>
+                <button class="filter-btn" data-filter="vegan">Vegan</button>
+                <button class="filter-btn" data-filter="gluten free">Gluten Free</button>
+            </div>
+            <div class="results-count">Showing <span id="products-count">9</span> treats</div>
+        </div>
+    </section>
     
     <section class="category">
         <div class="container">
             <h2>Haunted Brownies</h2>
             <div class="products-grid">
-                <div class="product-card">
-                    <img src="Images/Spooky brownie.jpeg" alt="Spooky Fudge Brownies">
+                <div class="product-card" data-tags="spooky vegan brownies">
+                    <img src="Images/Spooky brownie.jpeg" alt="Spooky Fudge Brownies" class="gallery-image">
                     <div class="product-info">
-                        <h3> Spooky Fudge Brownies</h3>
+                        <h3>Spooky Fudge Brownies</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
                         <p>Dense fudge brownies topped with white chocolate on top</p>
                         <div class="price">R55</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Spooky Fudge Brownies" data-price="55">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Spider web brownie.jpeg" alt=" Spider Web Brownies">
+                <div class="product-card" data-tags="spooky brownies">
+                    <img src="Images/Spider web brownie.jpeg" alt="Spider Web Brownies" class="gallery-image">
                     <div class="product-info">
-                        <h3> Spider Web Brownies</h3>
+                        <h3>Spider Web Brownies</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                         </div>
-                        <p> Rich, fudgy brownies with a kick of espresso to keep you going through the night!</p>
+                        <p>Rich, fudgy brownies with a kick of espresso to keep you going through the night!</p>
                         <div class="price">R60</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Spider Web Brownies" data-price="60">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Red valvet spider brownie.jpeg" alt="Spiderweb Brownie Bites">
+                <div class="product-card" data-tags="spooky gluten free brownies">
+                    <img src="Images/Red valvet spider brownie.jpeg" alt="Spiderweb Brownie Bites" class="gallery-image">
                     <div class="product-info">
                         <h3>Spiderweb Brownie Bites</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag gf">Gluten Free</span>
                         </div>
-                        <p>Mini  Red Valvet brownies with white chocolate spiderweb designs and sugar spiders</p>
+                        <p>Mini Red Valvet brownies with white chocolate spiderweb designs and sugar spiders</p>
                         <div class="price">R60 (6 pieces)</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Spiderweb Brownie Bites" data-price="60">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -93,22 +305,22 @@
         <div class="container">
             <h2>Monster Muffins</h2>
             <div class="products-grid">
-                <div class="product-card">
-                    <img src="Images/Raspberry muffins.jpeg" alt="Frankenstein's Blood Muffins">
+                <div class="product-card" data-tags="spooky vegan muffins">
+                    <img src="Images/Raspberry muffins.jpeg" alt="Frankenstein's Blood Muffins" class="gallery-image">
                     <div class="product-info">
                         <h3>Frankenstein's Blood Muffins</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
-                        <p>Rich chocolate cupcakes with chocolate buttercream, fresh raspberry "blood," chocolate chip "pebbles". </p>
+                        <p>Rich chocolate cupcakes with chocolate buttercream, fresh raspberry "blood," chocolate chip "pebbles".</p>
                         <div class="price">R40</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Frankenstein's Blood Muffins" data-price="40">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Blueberry Muffins.jpeg" alt="Werewolf Blueberry Muffins">
+                <div class="product-card" data-tags="spooky muffins">
+                    <img src="Images/Blueberry Muffins.jpeg" alt="Werewolf Blueberry Muffins" class="gallery-image">
                     <div class="product-info">
                         <h3>Werewolf Blueberry Muffins</h3>
                         <div class="product-tags">
@@ -116,12 +328,12 @@
                         </div>
                         <p>Blueberry muffins with "fur" textured tops and chocolate claw marks</p>
                         <div class="price">R45</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Werewolf Blueberry Muffins" data-price="45">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Brain Muffins.jpeg" alt="Zombie Brain Muffins">
+                <div class="product-card" data-tags="spooky gluten free muffins">
+                    <img src="Images/Brain Muffins.jpeg" alt="Zombie Brain Muffins" class="gallery-image">
                     <div class="product-info">
                         <h3>Zombie Brain Muffins</h3>
                         <div class="product-tags">
@@ -130,7 +342,7 @@
                         </div>
                         <p>Red velvet muffins with raspberry "blood" glaze and brain-shaped frosting</p>
                         <div class="price">R50</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Zombie Brain Muffins" data-price="50">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -141,22 +353,22 @@
         <div class="container">
             <h2>Dangerous Donuts</h2>
             <div class="products-grid">
-                <div class="product-card">
-                    <img src="Images/download.jpeg" alt="SpiderBite Donuts">
+                <div class="product-card" data-tags="spooky vegan donuts">
+                    <img src="Images/download.jpeg" alt="Vampire Bite Donuts" class="gallery-image">
                     <div class="product-info">
                         <h3>Vampire Bite Donuts</h3>
                         <div class="product-tags">
                             <span class="product-tag spooky">Spooky</span>
                             <span class="product-tag vegan">Vegan</span>
                         </div>
-                        <p>Chocolate donuts with "bite marks" and raspberry "blood"  filling</p>
+                        <p>Chocolate donuts with "bite marks" and raspberry "blood" filling</p>
                         <div class="price">R35 each</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Vampire Bite Donuts" data-price="35">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Ghostly Glaze Donuts.jpeg" alt="Ghostly Glaze Donuts">
+                <div class="product-card" data-tags="spooky donuts">
+                    <img src="Images/Ghostly Glaze Donuts.jpeg" alt="Ghostly Glaze Donuts" class="gallery-image">
                     <div class="product-info">
                         <h3>Ghostly Glaze Donuts</h3>
                         <div class="product-tags">
@@ -164,12 +376,12 @@
                         </div>
                         <p>Vanilla donuts with white chocolate ghosts and edible silver dust</p>
                         <div class="price">R35 each</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Ghostly Glaze Donuts" data-price="35">Add to Cart</button>
                     </div>
                 </div>
                 
-                <div class="product-card">
-                    <img src="Images/Eye Donut.jpeg" alt="Witch Hat Donuts">
+                <div class="product-card" data-tags="spooky gluten free donuts">
+                    <img src="Images/Eye Donut.jpeg" alt="Crimson Spell Donuts" class="gallery-image">
                     <div class="product-info">
                         <h3>Crimson Spell Donuts</h3>
                         <div class="product-tags">
@@ -178,12 +390,32 @@
                         </div>
                         <p>Blackberry and chocolate donuts with purple icing and gummy eye toppers</p>
                         <div class="price">R35 each</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="btn add-to-cart" data-product="Crimson Spell Donuts" data-price="35">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Spooky Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-total">Total: R<span id="cart-total">0</span></div>
+        <button class="btn checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <button class="cart-toggle">🛒 <span class="cart-count">0</span></button>
     
     <footer class="site-footer">
         <div class="container">
@@ -195,6 +427,8 @@
                         <li><a href="products.html">Menu</a></li>
                         <li><a href="services.html">Baking Classes</a></li>
                         <li><a href="contact.html">Order Online</a></li>
+                        <li><a href="enquiry.html">Enquiries</a></li>
+
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -225,5 +459,135 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.main-navigation');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            }
+
+            const searchInput = document.querySelector('.product-search');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            const productsCount = document.getElementById('products-count');
+
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+                
+                let visibleCount = 0;
+                
+                productCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const tags = Array.from(card.querySelectorAll('.product-tag')).map(tag => tag.textContent.toLowerCase());
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    
+                    const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                    const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+                    
+                    if (matchesSearch && matchesFilter) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                productsCount.textContent = visibleCount;
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', filterProducts);
+            }
+            
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterProducts();
+                });
+            });
+
+            const cartToggle = document.querySelector('.cart-toggle');
+            const cartSidebar = document.querySelector('.cart-sidebar');
+            const closeCart = document.querySelector('.close-cart');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartItems = document.querySelector('.cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            const cartCount = document.querySelector('.cart-count');
+
+            let cart = [];
+
+            if (cartToggle && cartSidebar) {
+                cartToggle.addEventListener('click', () => {
+                    cartSidebar.classList.add('active');
+                });
+
+                closeCart.addEventListener('click', () => {
+                    cartSidebar.classList.remove('active');
+                });
+            }
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const product = this.dataset.product;
+                    const price = parseInt(this.dataset.price);
+                    
+                    cart.push({ product, price });
+                    updateCartDisplay();
+                    
+                    alert(`Added ${product} to cart!`);
+                });
+            });
+
+            function updateCartDisplay() {
+                cartItems.innerHTML = '';
+                let total = 0;
+                
+                cart.forEach(item => {
+                    total += item.price;
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div>${item.product}</div>
+                        <div>R${item.price}</div>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = total;
+                cartCount.textContent = cart.length;
+            }
+
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+            const galleryImages = document.querySelectorAll('.gallery-image');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightboxImg.src = this.src;
+                    lightboxCaption.textContent = this.alt;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+/* JavaScript-created elements font fixes */
+.lightbox-caption {
+    font-family: 'Creepster', cursive;
+    font-size: 1.2rem;
+}
+
+.accordion-header {
+    font-family: 'Creepster', cursive;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.filter-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.product-tag {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Modal and popup fonts */
+.modal-content h3 {
+    font-family: 'Creepster', cursive;
+    font-size: 1.8rem;
+    color: var(--moon-glow);
+}
+
+.cart-sidebar h3 {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    color: var(--moon-glow);
+}
+
+/* Form step wizard fonts */
+.progress-step .step-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.form-step h3 {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    color: var(--moon-glow);
+}

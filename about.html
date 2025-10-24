@@ -5,8 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Story | Bat Bakery</title>
 
-    <link rel="stylesheet" href="about.css">
+    
+    <meta name="description" content="Discover Bat Bakery's story - founded by three night-owl sisters in Johannesburg. Learn about our nocturnal mission, values, and meet our team of night bakers.">
+    <meta name="keywords" content="Bat Bakery story, nocturnal bakery Johannesburg, about us, night bakers, bakery founders">
+    <meta name="author" content="Bat Bakery">
 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        .about-hero {
+    background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(13, 13, 26, 0.9)), 
+                url('Images/women.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+        .about-hero h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(109, 68, 184, 0.7);
+        }
+
+        .about-content {
+            padding: 6rem 0;
+            background: var(--dark-bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--moon-glow);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .bat-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .bat-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .bat-list li::before {
+            content: '🦇';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--accent-purple);
+        }
+
+        .mission-section {
+            padding: 6rem 0;
+            background: var(--darker-bg);
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--moon-glow);
+        }
+
+        .mission-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .team-section {
+            padding: 6rem 0;
+            background: var(--dark-bg);
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: var(--moon-glow);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 3px solid var(--accent-purple);
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--moon-glow);
+        }
+
+        .team-member p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-hero h2 {
+                font-size: 3rem;
+            }
+            
+            .about-image img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 6rem 0;
+            }
+            
+            .about-hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .mission-section,
+            .team-section {
+                padding: 4rem 0;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-text h2,
+            .mission-content h2,
+            .team-section h2 {
+                font-size: 2rem;
+            }
+            
+            .team-member img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -37,6 +252,7 @@
     <section class="about-hero">
         <div class="container">
             <h2>Our Nocturnal Story</h2>
+            <p>Discover the passion behind the pastries that come alive after dark</p>
         </div>
     </section>
     
@@ -59,7 +275,7 @@
                     </ul>
                 </div>
                 <div class="about-image">
-                    <img src="Images/download (5).jpeg" alt="Bat Bakery kitchen at night">
+                    <img src="Images/download (5).jpeg" alt="Bat Bakery kitchen at night with bakers preparing fresh pastries">
                 </div>
             </div>
         </div>
@@ -70,6 +286,7 @@
             <div class="mission-content">
                 <h2>Our Mission</h2>
                 <p>To prove the best things happen after dark, one delicious bite at a time. We believe the night holds magic that daylight can't match, and we're here to fuel your nocturnal adventures with treats that are worth staying up for.</p>
+                <p>We're committed to creating a community space for night owls, shift workers, and anyone who finds their creativity peaks when the moon rises.</p>
             </div>
         </div>
     </section>
@@ -79,17 +296,17 @@
             <h2>Meet the Night Bakers</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="Images/Tshiamo 1.jpg" alt="Tshiamo Nkge">
+                    <img src="Images/Tshiamo 1.jpg" alt="Tshiamo Nkge - Head Baker and Co-Founder of Bat Bakery">
                     <h3>Tshiamo Nkge</h3>
                     <p>Head Baker & Co-Founder</p>
                 </div>
                 <div class="team-member">
-                    <img src="Images/Lindile Moilwa.jpg" alt="Lindile Moilwa">
+                    <img src="Images/Lindile Moilwa.jpg" alt="Lindile Moilwa - Pastry Chef and Co-Founder of Bat Bakery">
                     <h3>Lindile Moilwa</h3>
                     <p>Pastry Chef & Co-Founder</p>
                 </div>
                 <div class="team-member">
-                    <img src="Images/Lotane Mmethi.jpg" alt="Lotane Mmethi">
+                    <img src="Images/Lotane Mmethi.jpg" alt="Lotane Mmethi - Midnight Delivery Specialist and Co-Founder of Bat Bakery">
                     <h3>Lotane Mmethi</h3>
                     <p>Midnight Delivery Specialist & Co-Founder</p>
                 </div>
@@ -97,45 +314,45 @@
         </div>
     </section>
     
-        <footer class="site-footer">
-            <div class="container">
-                <div class="footer-container">
-                    <div class="footer-section">
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="products.html">Menu</a></li>
-                            <li><a href="services.html">Baking Classes</a></li>
-                            <li><a href="contact.html">Order Online</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Contact</h3>
-                        <ul>
-                            <li>13 Bat Lane, Melville</li>
-                            <li>Johannesburg, South Africa</li>
-                            <li>+27 81 344 2121</li>
-                            <li>hello@batbakery.co.za</li>
-                        </ul>
-                        <div class="social-links">
-                            <a href="#">📱</a>
-                            <a href="#">📸</a>
-                            <a href="#">👻</a>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Operating Hours</h3>
-                        <ul>
-                            <li>Monday - Friday: 4 PM - Midnight</li>
-                            <li>Saturday - Sunday: 3 PM - 1 AM</li>
-                            <li>Closed on Full Moon Nights</li>
-                        </ul>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Menu</a></li>
+                        <li><a href="services.html">Baking Classes</a></li>
+                        <li><a href="contact.html">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>13 Bat Lane, Melville</li>
+                        <li>Johannesburg, South Africa</li>
+                        <li>+27 81 344 2121</li>
+                        <li>hello@batbakery.co.za</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#">📱</a>
+                        <a href="#">📸</a>
+                        <a href="#">👻</a>
                     </div>
                 </div>
-                <div class="copyright">
-                    <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <ul>
+                        <li>Monday - Friday: 4 PM - Midnight</li>
+                        <li>Saturday - Sunday: 3 PM - 1 AM</li>
+                        <li>Closed on Full Moon Nights</li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+            <div class="copyright">
+                <p>&copy; 2025 Bat Bakery. All rights reserved. Baked in the moonlight.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

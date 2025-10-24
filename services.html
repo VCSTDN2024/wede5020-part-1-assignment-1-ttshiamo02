@@ -4,9 +4,653 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Bat Bakery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="services.css">
+        :root {
+            --primary-color: #2c1a4d;
+            --secondary-color: #8a2be2;
+            --accent-color: #ff6b6b;
+            --text-color: #f0e6ff;
+            --dark-bg: #1a1a2e;
+            --light-bg: #2d2d44;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .site-header {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Creepster', cursive;
+            font-size: 1.8rem;
+            color: var(--text-color);
+        }
+
+        .logo-img {
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-navigation li {
+            margin-left: 1.5rem;
+        }
+
+        .main-navigation a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .main-navigation a:hover {
+            color: var(--accent-color);
+        }
+
+        .main-navigation a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .main-navigation a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .services-hero h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 3rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-intro {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .services-intro h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .services-intro p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(145deg, var(--light-bg) 0%, var(--primary-color) 100%);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-card-content {
+            padding: 2rem;
+        }
+
+        .service-card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .service-card-content p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .workshops-section {
+            padding: 4rem 0;
+            background: var(--light-bg);
+        }
+
+        .workshops-section h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .workshop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            background: var(--dark-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .workshop-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .workshop-content {
+            padding: 2.5rem;
+        }
+
+        .workshop-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .workshop-content p {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .workshop-details {
+            margin-bottom: 2rem;
+        }
+
+        .workshop-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        .site-footer {
+            background-color: var(--primary-color);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Creepster', cursive;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .workshop-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .workshop-filter-btn {
+            background: var(--dark-bg);
+            border: 2px solid var(--secondary-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .workshop-filter-btn.active,
+        .workshop-filter-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .workshop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .workshop-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .workshop-tag {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .workshop-tag.beginner {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .workshop-tag.intermediate {
+            background: #FF9800;
+            color: white;
+        }
+
+        .workshop-tag.family {
+            background: #2196F3;
+            color: white;
+        }
+
+        .workshop-tag.savory {
+            background: #795548;
+            color: white;
+        }
+
+        .workshop-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .service-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .testimonials-section {
+            padding: 4rem 0;
+            background: var(--light-bg);
+        }
+
+        .testimonials-section h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #ccc;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .booking-section {
+            padding: 4rem 0;
+            background: var(--dark-bg);
+        }
+
+        .booking-section h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-color);
+        }
+
+        .booking-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .booking-option, .booking-calendar {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+        }
+
+        .booking-option h3, .booking-calendar h3 {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .booking-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .booking-btn {
+            width: 100%;
+        }
+
+        .availability-indicator {
+            margin-top: 1.5rem;
+        }
+
+        .availability {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .main-navigation ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .main-navigation.active ul {
+                display: flex;
+            }
+            
+            .main-navigation li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            .main-navigation a {
+                display: block;
+                padding: 1rem;
+            }
+            
+            .services-hero {
+                padding: 4rem 0;
+            }
+            
+            .services-hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .workshop {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .workshop-actions {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .workshop {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -37,7 +681,7 @@
     <section class="services-hero">
         <div class="container">
             <h2>Beyond Baking</h2>
-            <p>We offer more than just delicious treats</p>
+            <p>We offer more than just delicious treats - discover our nocturnal services</p>
         </div>
     </section>
     
@@ -45,6 +689,25 @@
         <div class="container">
             <h2>Our Services</h2>
             <p>At Bat Bakery, we're committed to serving the nocturnal community in every way we can. From midnight deliveries to spooky baking classes, we've got your nighttime needs covered.</p>
+            
+            <div class="service-stats">
+                <div class="stat">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Midnight Deliveries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">Workshop Attendees</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Custom Cakes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">Hour Pickup</div>
+                </div>
+            </div>
         </div>
     </section>
     
@@ -56,6 +719,14 @@
                     <div class="service-card-content">
                         <h3>Midnight Delivery</h3>
                         <p>Until 12 AM (because cravings wait for no one). We'll deliver our fresh bakes right to your door, even after dark.</p>
+                        <div class="service-features">
+                            <div class="feature">🦇 Delivery until midnight</div>
+                            <div class="feature">🌙 Same-day ordering</div>
+                            <div class="feature">📱 Real-time tracking</div>
+                        </div>
+                        <div class="service-price">
+                            <strong>Delivery Fee:</strong> R35 within 5km
+                        </div>
                         <a href="contact.html" class="btn">Schedule Delivery</a>
                     </div>
                 </div>
@@ -65,6 +736,14 @@
                     <div class="service-card-content">
                         <h3>"Bat Cave" Pickup</h3>
                         <p>A 24/7 locker system for pre-orders. Order anytime, pick up anytime—our temperature-controlled lockers keep your treats fresh.</p>
+                        <div class="service-features">
+                            <div class="feature">🦇 24/7 access</div>
+                            <div class="feature">❄️ Temperature controlled</div>
+                            <div class="feature">🔒 Secure pickup</div>
+                        </div>
+                        <div class="service-price">
+                            <strong>No extra fee</strong> - included with all pre-orders
+                        </div>
                         <a href="contact.html" class="btn">Learn More</a>
                     </div>
                 </div>
@@ -74,7 +753,43 @@
                     <div class="service-card-content">
                         <h3>Custom Cakes</h3>
                         <p>Special occasions deserve special cakes. Our gothic-inspired designs will make your event unforgettable.</p>
+                        <div class="service-features">
+                            <div class="feature">🦇 Gothic designs</div>
+                            <div class="feature">🌙 Vegan options</div>
+                            <div class="feature">🎨 Custom themes</div>
+                        </div>
+                        <div class="service-price">
+                            <strong>Starting from:</strong> R350
+                        </div>
                         <a href="contact.html" class="btn">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <h2>Book Our Services</h2>
+            <div class="booking-options">
+                <div class="booking-option">
+                    <h3>🦇 Quick Book</h3>
+                    <p>Need our services urgently? Book directly through our quick booking system.</p>
+                    <div class="booking-buttons">
+                        <button class="btn booking-btn" data-service="delivery">Book Delivery</button>
+                        <button class="btn booking-btn" data-service="workshop">Book Workshop</button>
+                        <button class="btn booking-btn" data-service="cake">Book Consultation</button>
+                    </div>
+                </div>
+                <div class="booking-calendar">
+                    <h3>📅 Available Dates</h3>
+                    <div class="calendar-note">
+                        <p>Most workshops and consultations available within 1-2 weeks</p>
+                    </div>
+                    <div class="availability-indicator">
+                        <div class="availability available">🟢 Available this week</div>
+                        <div class="availability limited">🟡 Limited next week</div>
+                        <div class="availability full-moon">🔴 Closed full moon week</div>
                     </div>
                 </div>
             </div>
@@ -84,55 +799,128 @@
     <section class="workshops-section">
         <div class="container">
             <h2>Themed Baking Workshops</h2>
+            <p class="section-intro">Join our nocturnal baking community and learn to create spooky treats under the moonlight</p>
             
-            <div class="workshop">
+            <div class="workshop-filter">
+                <button class="workshop-filter-btn active" data-workshop="all">All Workshops</button>
+                <button class="workshop-filter-btn" data-workshop="beginner">Beginner</button>
+                <button class="workshop-filter-btn" data-workshop="intermediate">Intermediate</button>
+                <button class="workshop-filter-btn" data-workshop="family">Family Friendly</button>
+            </div>
+            
+            <div class="workshop" data-level="beginner" data-category="family">
                 <div class="workshop-image">
                     <img src="Images/Korean_Girl_Baking!.jpeg" alt="Gothic Decorating">
                 </div>
                 <div class="workshop-content">
-                    <h3>Gothic Cupcake Decorating</h3>
+                    <div class="workshop-header">
+                        <h3>Gothic Cupcake Decorating</h3>
+                        <div class="workshop-tags">
+                            <span class="workshop-tag beginner">Beginner</span>
+                            <span class="workshop-tag family">Family Friendly</span>
+                        </div>
+                    </div>
                     <p>Learn to create stunning gothic-inspired cupcakes with our expert bakers. Perfect for Halloween or just because!</p>
                     <p>We'll cover black frosting techniques, edible glitter applications, and how to create miniature fondant bats and spiders.</p>
                     <div class="workshop-details">
                         <p><strong>When:</strong> Every Friday at 8 PM</p>
                         <p><strong>Duration:</strong> 2 hours</p>
                         <p><strong>Price:</strong> R250 per person (includes 6 cupcakes to decorate)</p>
+                        <p><strong>Skill Level:</strong> Beginner friendly</p>
+                        <p><strong>Age:</strong> 10+ (under 16 with adult)</p>
                     </div>
-                    <a href="contact.html" class="btn">Book Now</a>
+                    <div class="workshop-actions">
+                        <a href="contact.html" class="btn">Book Now</a>
+                        <button class="btn-outline add-to-wishlist" data-workshop="Gothic Cupcake Decorating">💜 Save</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="workshop">
+            <div class="workshop" data-level="intermediate" data-category="baking">
                 <div class="workshop-image">
                     <img src="Images/Workshop2.jpeg" alt="Vampire Bread Making">
                 </div>
                 <div class="workshop-content">
-                    <h3>Vampire Bread Making</h3>
+                    <div class="workshop-header">
+                        <h3>Vampire Bread Making</h3>
+                        <div class="workshop-tags">
+                            <span class="workshop-tag intermediate">Intermediate</span>
+                            <span class="workshop-tag savory">Savory</span>
+                        </div>
+                    </div>
                     <p>Master the art of artisan bread making with a gothic twist. We'll teach you how to make our famous Vampire Garlic Bread and other savory night-time treats.</p>
                     <p>This workshop includes all ingredients and you'll take home two loaves of your own creation.</p>
                     <div class="workshop-details">
                         <p><strong>When:</strong> Every Saturday at 7 PM</p>
                         <p><strong>Duration:</strong> 3 hours</p>
                         <p><strong>Price:</strong> R300 per person</p>
+                        <p><strong>Skill Level:</strong> Some experience helpful</p>
+                        <p><strong>Take Home:</strong> 2 fresh bread loaves</p>
                     </div>
-                    <a href="contact.html" class="btn">Book Now</a>
+                    <div class="workshop-actions">
+                        <a href="contact.html" class="btn">Book Now</a>
+                        <button class="btn-outline add-to-wishlist" data-workshop="Vampire Bread Making">💜 Save</button>
+                    </div>
                 </div>
             </div>
             
-            <div class="workshop">
+            <div class="workshop" data-level="beginner" data-category="family">
                 <div class="workshop-image">
                     <img src="Images/Workshop.jpeg" alt="Spooky Cookie Decorating">
                 </div>
                 <div class="workshop-content">
-                    <h3>Spooky Cookie Decorating</h3>
+                    <div class="workshop-header">
+                        <h3>Spooky Cookie Decorating</h3>
+                        <div class="workshop-tags">
+                            <span class="workshop-tag beginner">Beginner</span>
+                            <span class="workshop-tag family">Family Friendly</span>
+                        </div>
+                    </div>
                     <p>A family-friendly workshop where you'll learn to decorate cookies with ghoulish designs. Perfect for kids and adults alike!</p>
                     <p>We provide all the cookies, icing, and decorations - you bring the creativity!</p>
                     <div class="workshop-details">
                         <p><strong>When:</strong> Every Sunday at 6 PM</p>
                         <p><strong>Duration:</strong> 1.5 hours</p>
                         <p><strong>Price:</strong> R200 per person (includes 6 cookies)</p>
+                        <p><strong>Skill Level:</strong> Absolute beginner</p>
+                        <p><strong>Age:</strong> All ages (kids 5+)</p>
                     </div>
-                    <a href="contact.html" class="btn">Book Now</a>
+                    <div class="workshop-actions">
+                        <a href="contact.html" class="btn">Book Now</a>
+                        <button class="btn-outline add-to-wishlist" data-workshop="Spooky Cookie Decorating">💜 Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Night Owls Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The midnight delivery saved my birthday party! Fresh brownies at 11 PM - Bat Bakery is a lifesaver for us night shift workers!"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Mamello M.</strong> - Nurse
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "The Gothic Cupcake workshop was incredible! I never knew I could create such spooky beautiful treats. Can't wait for the next one!"
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Lwethu T.</strong> - Graphic Designer
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Our wedding cake was absolutely stunning! The bat-themed design was perfect and tasted even better than it looked."
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Amanda &amp; Kamogelo</strong> - Newlyweds
+                    </div>
                 </div>
             </div>
         </div>
@@ -148,6 +936,8 @@
                         <li><a href="products.html">Menu</a></li>
                         <li><a href="services.html">Baking Classes</a></li>
                         <li><a href="contact.html">Order Online</a></li>
+                        <li><a href="enquiry.html">Enquiries</a></li>
+
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -178,5 +968,98 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Book Your Service</h3>
+            <div class="modal-body">
+                <p>Redirecting to our booking system...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('.main-navigation');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            }
+
+            const bookingBtns = document.querySelectorAll('.booking-btn');
+            const bookingModal = document.getElementById('bookingModal');
+            const closeModal = document.querySelector('.close-modal');
+
+            bookingBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const service = this.dataset.service;
+                    bookingModal.classList.add('active');
+                    
+                    setTimeout(() => {
+                        bookingModal.classList.remove('active');
+                        alert(`Redirecting to ${service} booking page...`);
+                    }, 2000);
+                });
+            });
+
+            closeModal.addEventListener('click', function() {
+                bookingModal.classList.remove('active');
+            });
+
+            const workshopFilterBtns = document.querySelectorAll('.workshop-filter-btn');
+            const workshops = document.querySelectorAll('.workshop');
+
+            workshopFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    workshopFilterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.workshop;
+                    
+                    workshops.forEach(workshop => {
+                        if (filter === 'all' || workshop.dataset.level === filter || workshop.dataset.category === filter) {
+                            workshop.style.display = 'grid';
+                        } else {
+                            workshop.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            const wishlistBtns = document.querySelectorAll('.add-to-wishlist');
+            
+            wishlistBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const workshop = this.dataset.workshop;
+                    this.textContent = '💜 Saved!';
+                    setTimeout(() => {
+                        this.textContent = '💜 Save';
+                    }, 2000);
+                });
+            });
+
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.dataset.count);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 16);
+            });
+        });
+    </script>
 </body>
 </html>
