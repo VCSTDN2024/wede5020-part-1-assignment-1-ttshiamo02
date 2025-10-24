@@ -1,553 +1,327 @@
- ## Bat Bakery - Complete Website
- 
-A spooky-themed nocturnal bakery website for night owls, insomniacs, and dessert rebels who crave fresh bakes after dark. Features complete dark theme with bat-inspired design, full responsive styling, and advanced JavaScript functionality.
+## Bat Bakery
 
-## Project Overview
-This is a fully-featured, responsive website for Bat Bakery featuring HTML5 structure, advanced CSS3 styling, comprehensive JavaScript functionality, and SEO optimization across all 6 pages.
+A spooky-themed bakery website for night owls, insomniacs, and dessert rebels who crave fresh bakes after dark. Features a complete dark theme with bat-inspired design, full responsive styling, and advanced JavaScript functionality.
+
+
+## Project Overview 
+
+This project is a fully-styled, responsive website for **Bat Bakery**, built using **HTML, CSS, and JavaScript**.
+It includes interactive functionality, SEO optimization, and accessibility compliance across all 6 pages.
+
+
+### HTML Structure Overview
+
+* **index.html** – Homepage with hero section and featured products
+* **about.html** – About the bakery, founding story, and team profiles
+* **products.html** – Product catalog with categories and shopping cart
+* **services.html** – Baking workshops and service offerings
+* **contact.html** – Contact form and location map
+* **enquiry.html** – Multi-step enquiry form wizard with validation
+
+
 
 ## Current Features
-JavaScript Enhancements
-Interactive Lightbox Gallery - Click product/team images to enlarge
 
-Product Search & Filter - Real-time filtering by category and tags
+###  Styling & Design
 
-Shopping Cart System - Add items, manage quantities, calculate totals
+* Complete dark gothic theme with bat-inspired color palette
+* Responsive design for mobile, tablet, and desktop
+* Interactive hover effects and smooth transitions
+* CSS Grid and Flexbox layouts
+* Custom CSS properties for maintainable theming
 
-Multi-step Form Wizard - Guided enquiry process with validation
+### Navigation
 
-Service Booking System - Quick booking modals and availability
+* Sticky header with smooth navigation
+* Mobile-responsive hamburger menu
+* Consistent navigation across all pages
+* Hover underline animations
 
-Accordion FAQs - Expandable content sections
+### Interactive JavaScript Features
 
-Animated Statistics - Number counting animations
+* **Interactive Lightbox Gallery** – Click product or team images to enlarge
+* **Product Search & Filter** – Real-time filtering by category and tags
+* **Shopping Cart System** – Add, remove, and update items with totals and persistence via Local Storage
+* **Multi-step Enquiry Form Wizard** – Guided enquiry process with validation and animated transitions
+* **Service Booking System** – Pop-up modals for class booking and availability
+* **Accordion FAQs** – Expandable sections for team and services pages
+* **Animated Statistics** – Number counters for bakery stats
+* **Wishlist Functionality** – Save workshops or products for later
+* **Form Validation** – Real-time input feedback and error messages
+* **Service Worker** – Enables offline access and caching for performance
 
-Wishlist Functionality - Save workshops for later
-
-Form Validation - Real-time validation with error messages
-
-Service Worker - Offline functionality and caching
 
 ## SEO Optimization
-Meta Tags - Optimized titles, descriptions, and keywords
 
-Open Graph Tags - Social media sharing optimization
-
-Twitter Cards - Twitter-specific sharing
-
-JSON-LD Structured Data - Schema.org markup for search engines
-
-XML Sitemap - Complete site structure for crawlers
-
-Robots.txt - Search engine directives
-
-Semantic HTML - Proper heading hierarchy and structure
-
-## Advanced Forms
-Contact Form - Comprehensive validation with dynamic fields
-
-Enquiry Form - Multi-step wizard with service-specific questions
-
-Real-time Validation - Instant feedback with error messages
-
-Character Counters - Message length tracking
-
-File Upload - Reference image support
-
-Dynamic Fields - Context-aware form elements
-
-Loading States - Animated submit buttons
-
-Success Modals - Detailed confirmation messages
-
-## Styling & Design
-Complete Dark Theme with bat-inspired gothic aesthetic
-
-Responsive Design for mobile, tablet, and desktop
-
-CSS Animations with smooth transitions and hover effects
-
-Custom CSS Properties for maintainable theming
-
-Performance Optimized with critical CSS and lazy loading
-
-## File Structure
-text
-bat-bakery/
-├── index.html              # Homepage with hero & featured products
-├── about.html              # Company story, team & FAQs
-├── products.html           # Product catalog with shopping cart
-├── services.html           # Services, workshops & booking
-├── contact.html            # Contact form & location map
-├── enquiry.html            # Service enquiry wizard
-├── style.css               # Main stylesheet
-├── animations.css          # CSS animations & transitions
-├── performance.css         # Performance optimizations
-├── scripts.js              # Main JavaScript functionality
-├── form-validation.js      # Form validation logic
-├── cart.js                 # Shopping cart functionality
-├── services.js             # Services page interactions
-├── contact.js              # Contact page functionality
-├── enquiry.js              # Enquiry wizard logic
-├── sw.js                   # Service Worker
-├── robots.txt              # SEO directives
-├── sitemap.xml             # Site structure for search engines
-└── Images/                 # Product, team & service images
-Technical Implementation
-CSS Architecture
-css
-:root {
-    --dark-bg: #1a1a2e;
-    --darker-bg: #0d0d1a;
-    --accent-purple: #6d44b8;
-    --accent-red: #b8446d;
-    --text-light: #f0f0f0;
-    --text-muted: #a0a0a0;
-    --moon-glow: #f5f3ce;
-    --bat-wing: #2d2d4d;
-    --card-bg: #252540;
-    --transition: all 0.3s ease;
-}
+* Meta tags for optimized titles, descriptions, and keywords
+* Open Graph and Twitter Card tags for social sharing
+* JSON-LD structured data for enhanced search visibility
+* XML Sitemap and robots.txt for web crawlers
+* Semantic HTML structure for better accessibility
 
 
-## JavaScript Architecture
-Modular Design - Separate files for specific functionality
 
-Event Delegation - Efficient event handling
+## Accessibility & Performance
 
-Local Storage - Cart and wishlist persistence
+* WCAG-compliant color contrast
+* Proper heading hierarchy and ARIA labels
+* Keyboard navigation across all pages
+* Lazy loading and optimized assets for faster performance
 
-ES6+ Features - Modern JavaScript syntax
 
-Error Handling - Comprehensive validation and user feedback
 
 ## Responsive Breakpoints
-Desktop: 1200px+ (full layout with advanced features)
 
-Tablet: 768px-1024px (adjusted grids and navigation)
+* **Desktop:** 1200px+ (full layout)
+* **Tablet:** 768px–1024px (adjusted grids and navigation)
+* **Mobile:** 480px–768px (single-column layout, hamburger menu)
+* **Small Mobile:** <480px (compact layout, touch-optimized)
 
-Mobile: 480px-768px (single column, hamburger menu)
 
-Small Mobile: <480px (compact layout with touch optimization)
 
-## Brand Identity
-**Business Information**
-Name: Bat Bakery
+## File Structure
 
-Tagline: "Baked in the Moonlight"
+```
+bat-bakery/
+├── index.html              # Homepage
+├── about.html              # Company story & team
+├── products.html           # Product catalog
+├── services.html           # Services & workshops
+├── contact.html            # Contact form & map
+├── enquiry.html            # Enquiry form wizard
+├── style.css               # Main stylesheet
+├── animations.css          # CSS animations
+├── scripts.js              # JavaScript features
+├── form-validation.js      # Validation logic
+├── cart.js                 # Shopping cart system
+├── enquiry.js              # Enquiry wizard logic
+├── sw.js                   # Service worker for offline access
+├── sitemap.xml             # Sitemap for search engines
+├── robots.txt              # SEO directives
+└── Images/                 # Product and team images
+```
 
-Theme: Gothic bakery for nocturnal customers
 
-Target: Night shift workers, insomniacs, dessert rebels
 
-## Operating Hours
-Monday - Friday: 4 PM - Midnight
+## HTML SCREENSHOTS
 
-Saturday - Sunday: 3 PM - 1 AM
+###  Homepage
 
-Closed on Full Moon Nights
+<img width="500" height="500" alt="Homepage" src="https://github.com/user-attachments/assets/f9eb6fd3-92f5-4d21-8c8c-b362710bdd97" />
 
-## Contact Details
-Address: 13 Bat Lane, Melville, Johannesburg, South Africa
+###  About Us
 
-Phone: +27 81 344 2121
+<img width="500" height="500" alt="About Us" src="https://github.com/user-attachments/assets/054179be-7a97-4338-a409-2d8d8fa8d1de" />
 
-Email: hello@batbakery.co.za
+###  Products
 
-## Menu Categories & Pricing
-Haunted Brownies
-Spooky Fudge Brownies (Vegan) - R55
+<img width="500" height="500" alt="Products" src="https://github.com/user-attachments/assets/0dffb1b8-4356-4147-8b10-77447567e082" />
 
-Spider Web Brownies - R60
+###  Services
 
-Spiderweb Brownie Bites (Gluten Free) - R60 (6 pieces)
+<img width="500" height="500" alt="Services" src="https://github.com/user-attachments/assets/fd4bc311-c226-43ac-9cb4-236c09ff2e06" />
 
-Monster Muffins
-Frankenstein's Blood Muffins (Vegan) - R40
+###  Contact Us
 
-Werewolf Blueberry Muffins - R45
+<img width="700" height="500" alt="Contact Us" src="https://github.com/user-attachments/assets/6112d716-abb5-4ca4-8294-428d97b3bd6d" />
 
-Zombie Brain Muffins (Gluten Free) - R50
+###  Location
 
-Dangerous Donuts
-Vampire Bite Donuts (Vegan) - R35 each
+<img width="600" height="400" alt="Location" src="https://github.com/user-attachments/assets/de14e583-d6bc-49f4-aae4-7e1e484d50f8" />
 
-Ghostly Glaze Donuts - R35 each
 
-Crimson Spell Donuts (Gluten Free) - R35 each
 
-## Services Offered
-Core Services
-Midnight Delivery - Until 12 AM with real-time tracking
+## CSS SCREENSHOTS
 
-"Bat Cave" Pickup - 24/7 temperature-controlled lockers
+### Homepage
 
-Custom Cakes - Gothic-inspired designs with consultation
+<img width="500" height="600" alt="css_homepage" src="https://github.com/user-attachments/assets/f2422853-39d3-4311-90df-e66dd9566624" />
 
-## Baking Workshops
-Gothic Cupcake Decorating - Fridays 8 PM (R250)
+### About Us
 
-Vampire Bread Making - Saturdays 7 PM (R300)
+<img width="500" height="600" alt="css_about" src="https://github.com/user-attachments/assets/f42c0df6-8b54-45a8-9574-a7d039431128" />
 
-Spooky Cookie Decorating - Sundays 6 PM (R200)
+### Products
 
-## Meet the Team
-The Night Bakers (Co-Founders)
-Tshiamo Nkge - Head Baker & Co-Founder
+<img width="500" height="600" alt="css_products" src="https://github.com/user-attachments/assets/189ec16c-0f4b-416e-ab82-42b2dd54c734" />
 
-Lindile Moilwa - Pastry Chef & Co-Founder
+### Services
 
-Lotane Mmethi - Midnight Delivery Specialist & Co-Founder
+<img width="500" height="600" alt="css_service" src="https://github.com/user-attachments/assets/05be13a8-89e8-4936-aeb7-07a80051740a" />
 
-Founded by three night-owl sisters in Johannesburg, the bakery caters to those who thrive when the sun goes down.
+### Contact Us
+
+<img width="500" height="600" alt="css_contact" src="https://github.com/user-attachments/assets/358c5451-fef8-42d2-9ad6-ccaf5a0ab7d7" />
+
+### Location
+
+<img width="500" height="600" alt="css_location" src="https://github.com/user-attachments/assets/541273d8-a59e-4665-8fb0-01623494f14c" />
+
+## JAVASCRIPT SCREENSHOTS
+
+### HOMEPAGE 
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/409f1b27-53b6-469a-ac2a-030c94311cf4" />
+
+
+### ABOUT US 
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/9eafe8a6-c306-4910-b58f-5871fc19f729" />
+
+### PRODUCTS
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/5688f48c-14f3-4b8e-89a8-f082c4e66146" />
+
+### SERVICES
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/7d881ef0-58d1-4117-bfb3-76b91dc02cc4" />
+
+### CONTACT
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/04417791-7a2d-498a-a7a1-8b55f1e2936d" />
+
+### ENQUIRIES
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/54411210-caaf-4c6d-a2af-d002614a94e8" />
+
+### LOCATION
+
+<img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/be5b355b-3105-4c55-94f8-6dd013138b03" />
+
+
 
 ## Design Features
-Visual Elements
-Color Scheme: Dark purples, coral accents, lavender text
 
-Typography: Creepster font for headings, clean sans-serif for body
+* **Color Scheme:** Dark purples, coral accents, lavender text
+* **Typography:** Gothic headers with clean sans-serif body text
+* **Imagery:** Consistent product and team photos with hover effects
+* **Layout:** CSS Grid and Flexbox for responsive layout
+* **Animations:** Smooth hover transitions and fade effects
 
-Imagery: Product photos with consistent styling and hover effects
 
-Layout: CSS Grid and Flexbox for responsive layouts
 
 ## User Experience
-Navigation: Intuitive menu structure with active states and mobile hamburger
 
-Product Display: Card-based layout with filtering and search
+* Intuitive navigation with consistent layout
+* Real-time product search and filtering
+* Dynamic enquiry and contact forms with validation
+* Accessible keyboard navigation
+* Mobile-friendly design with hamburger menu
 
-Forms: Multi-step wizards with progressive disclosure
 
-Mobile: Touch-friendly interfaces with optimized interactions
-
-## Accessibility
-Semantic HTML: Proper heading hierarchy and ARIA labels
-
-Alt Text: Descriptive text for all images
-
-Color Contrast: WCAG AA compliant color combinations
-
-Keyboard Navigation: Full keyboard accessibility and focus management
 
 ## Getting Started
-Prerequisites
-Modern web browser (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
 
-Text editor for modifications (VS Code recommended)
+### Prerequisites
 
-Local web server for development (optional)
+* A modern browser (Chrome, Firefox, Safari, Edge)
+* Text editor (VS Code recommended)
+* Local web server (optional for development)
+
+
 
 ## Installation
-Download or clone the project files
 
-Open index.html in a web browser
+1. Download or clone this repository
+2. Open `index.html` in your browser
+3. Navigate between pages using the top menu
+4. Explore interactive elements and enquiry form
 
-Navigate between pages using the menu
 
-Test all interactive features including forms and shopping cart
 
 ## Development Setup
-bash
-# Using Python (if available)
+
+```bash
+# Using Python (if installed)
 python -m http.server 8000
 
-# Using Node.js http-server (if available)
+# Using Node.js http-server
 npx http-server
 
-# Or simply open index.html in your browser
-Browser Support
-Tested Browsers
-Chrome 90+
+# Or simply open index.html directly in your browser
+```
 
-Firefox 88+
 
-Safari 14+
 
-Edge 90+
+## Browser Support
 
-## CSS Features Used
-CSS Grid and Flexbox layouts
+*  Chrome 90+
+*  Firefox 88+
+*  Safari 14+
+*  Edge 90+
 
-Custom Properties (CSS Variables)
 
-Transform and Transition animations
-
-Gradient backgrounds and box shadows
-
-Media queries for responsive design
-
-Version History
-[3.0.0] - 2025-10-22 (Current - Part 3 Complete)
-## Added
-Complete JavaScript functionality across all pages
-
-Interactive product filtering and search system
-
-Shopping cart with local storage persistence
-
-Multi-step enquiry form wizard with validation
-
-Service booking system with modals
-
-Image lightbox gallery for products and team
-
-FAQ accordion system with smooth animations
-
-Animated statistics counters
-
-Wishlist functionality for workshops
-
-Comprehensive form validation with real-time feedback
-
-Service Worker for offline functionality
-
-Complete SEO optimization with structured data
-
-XML sitemap and robots.txt
-
-Advanced contact forms with dynamic fields
-
-Character counters and file upload support
-
-Success modals and loading states
-
-## Enhanced
-Mobile navigation with improved touch targets
-
-Form user experience with progressive disclosure
-
-Performance optimizations with critical CSS
-
-Accessibility compliance with ARIA labels
-
-Error handling and user feedback systems
-
-Responsive design for all interactive elements
-
-## Fixed
-Cross-browser compatibility issues
-
-Mobile form input optimization
-
-JavaScript error handling and edge cases
-
-Performance bottlenecks in animations
-
-[2.0.0] - 2025-09-27 (Part 2 Complete)
-## Added
-Complete CSS styling for all 5 pages
-
-Dark theme with bat-inspired gothic design
-
-Mobile-responsive navigation with hamburger menu
-
-Product tagging system (spooky, vegan, gluten-free)
-
-Interactive hover effects and smooth transitions
-
-Form styling with custom inputs and buttons
-
-Google Maps integration on contact page
-
-Team member profiles with hover animations
-
-Workshop listings with detailed layouts
-
-Social media links with custom styling
-
-## Enhanced
-Color scheme with CSS custom properties
-
-Typography hierarchy with proper font sizing
-
-Image optimization with hover effects
-
-Button styling with gradient backgrounds
-
-Grid layouts for product displays
-
-Mobile responsiveness with proper breakpoints
-
-## Fixed
-Navigation consistency across all pages
-
-Color contrast for accessibility compliance
-
-Layout issues on smaller screen sizes
-
-Form element spacing and alignment
-
-[1.1.0] - 2025-10-27
-## Added
-Basic CSS foundation with design system variables
-
-Initial responsive navigation structure
-
-Footer with social links and operating hours
-
-Product card layouts and basic styling
 
 ## Contributing
-Development Guidelines
-Follow existing CSS architecture and naming conventions
 
-Test responsive design on multiple screen sizes
+### Development Guidelines
 
-Ensure accessibility standards are maintained
+* Follow consistent CSS class naming conventions
+* Test responsiveness across multiple devices
+* Maintain accessibility (WCAG standards)
+* Use semantic HTML and ARIA labels
 
-Update README for any significant changes
 
-Use semantic HTML and proper ARIA attributes
 
 ## Content Guidelines
-Maintain spooky but friendly Halloween theme
 
-Use clear and appetizing food descriptions
+* Maintain spooky yet playful tone
+* Use South African currency (Rands)
+* Ensure clear product descriptions and workshop details
+* Keep branding consistent with “Baked in the Moonlight” theme
 
-Include local South African references and rand pricing
 
-Keep tone playful, mysterious, and inclusive
 
-License
-This project is created for educational purposes. All content and designs are original.
+## License
 
-Contact
-For questions about this project:
+This project is created for **educational purposes**.
+All content, designs, and imagery are original to the Bat Bakery team.
 
-Create an issue in the repository
 
-Follow the coding standards established in the existing files
 
-Baked in the moonlight with HTML, CSS, JavaScript, and a touch of gothic magic
+## **Contact**
 
-Changelog
-[3.0.0] - 2025-10-23
-Part 3 Implementation - Complete Website Enhancement
+* 📧 **Email:** [hello@batbakery.co.za](tshiaa:hello@batbakery.co.za)
+* 📍 **Address:** 13 Bat Lane, Melville, Johannesburg, South Africa
+* ☎️ **Phone:** +27 81 344 2121
 
-## JavaScript Functionality
-Implemented comprehensive JavaScript across all pages
 
-Added interactive product filtering and search system
 
-Created shopping cart with local storage persistence
+## Version History
 
-Built multi-step enquiry form wizard with validation
+### (NEW) [3.0.0] – 2025-10-23 (Current)
 
-Developed service booking system with modal interfaces
+#### Added
 
-Integrated image lightbox gallery for enhanced viewing
+* Full JavaScript functionality (cart, enquiry wizard, modals, validation)
+* Interactive filtering and wishlist features
+* SEO and accessibility optimization
+* Service worker for offline caching
 
-Added FAQ accordion system with smooth animations
+#### Enhanced
 
-Implemented animated statistics counters
+* Performance and animation timing
+* Mobile navigation and form feedback
 
-Created wishlist functionality for workshops
 
-Added comprehensive form validation with real-time feedback
 
-Integrated Service Worker for offline functionality
+### [2.0.0] – 2025-09-24
 
-## SEO Optimization
-Added complete meta tags optimization
+#### Added
 
-Implemented Open Graph and Twitter Card tags
+* Complete CSS styling for all pages
+* Dark gothic design theme
+* Responsive navigation and grid layouts
 
-Added JSON-LD structured data markup
 
-Created XML sitemap for search engines
 
-Added robots.txt directives
+### [1.1.0] – 2025-09-23
 
-Enhanced semantic HTML structure
+#### Added
 
-Forms Enhancement
-Built advanced contact forms with dynamic fields
+* Initial HTML and CSS foundation
+* Basic navigation and footer
 
-Added real-time validation with error messages
 
-Implemented character counters for text areas
-
-Added file upload support for reference images
-
-Created loading states and success modals
-
-Added multi-step form navigation
-
-## Performance & Accessibility
-Optimized CSS with critical path rendering
-
-Added lazy loading for images
-
-Enhanced keyboard navigation
-
-Improved ARIA labels and accessibility
-
-Added touch-friendly mobile interfaces
-
-Fixed cross-browser compatibility issues
-
-## User Experience
-Enhanced mobile navigation with better touch targets
-
-Improved form user experience with progressive disclosure
-
-Added comprehensive error handling
-
-Created intuitive shopping cart interface
-
-Added service-specific form fields
-
-Implemented responsive design for all interactive elements
-
-[2.0.0] - 2025-09-28
-Part 2 Implementation - Complete Styling
-
-## CSS Architecture
-Established complete design system with CSS custom properties
-
-Implemented dark theme with gothic aesthetic
-
-Created responsive grid and flexbox layouts
-
-Added smooth transitions and hover effects
-
-## Page Styling
-Styled all 5 pages with consistent design language
-
-Added mobile-responsive navigation with hamburger menu
-
-Created product card layouts with tagging system
-
-Styled forms with custom inputs and validation states
-
-Added team member profiles with hover animations
-
-## Responsive Design
-Implemented comprehensive mobile-first responsive design
-
-Added breakpoints for tablet and desktop layouts
-
-Optimized touch interfaces for mobile devices
-
-Fixed layout issues across all screen sizes
-
-[1.1.0] - 2025-09-27
-## Initial Setup
-
-## Foundation
-Created basic HTML structure for all pages
-
-Established initial CSS foundation
-
-Set up basic navigation and footer
-
-Added initial product and service content
-
-## Basic Styling
-Implemented initial color scheme and typography
-
-Added basic responsive navigation
-
-Created initial layout structures
-
-Set up project file organization
+🦇 *Baked in the moonlight with HTML, CSS, JavaScript, and a touch of gothic magic.*
 
