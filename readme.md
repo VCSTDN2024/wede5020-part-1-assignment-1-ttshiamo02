@@ -203,7 +203,7 @@ bat-bakery/
 <img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/7d881ef0-58d1-4117-bfb3-76b91dc02cc4" />
 
 
-### CONTACT
+### CONTACT US
 
 
 <img width="500" height="600" alt="image" src="https://github.com/user-attachments/assets/04417791-7a2d-498a-a7a1-8b55f1e2936d" />
