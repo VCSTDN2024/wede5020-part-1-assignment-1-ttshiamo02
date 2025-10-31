@@ -312,9 +312,9 @@ All content, designs, and imagery are original to the Bat Bakery team.
 
 ## **Contact**
 
-* 📧 **Email:** [hello@batbakery.co.za](tshiaa:hello@batbakery.co.za)
-* 📍 **Address:** 13 Bat Lane, Melville, Johannesburg, South Africa
-* ☎️ **Phone:** +27 81 344 2121
+*  **Email:** [hello@batbakery.co.za](tshiaa:hello@batbakery.co.za)
+*  **Address:** 13 Bat Lane, Melville, Johannesburg, South Africa
+*  **Phone:** +27 81 344 2121
 
 
 
@@ -354,5 +354,5 @@ All content, designs, and imagery are original to the Bat Bakery team.
 * Basic navigation and footer
 
 
-🦇 *Baked in the moonlight with HTML, CSS, JavaScript, and a touch of gothic magic.*
+ *Baked in the moonlight with HTML, CSS, JavaScript, and a touch of gothic magic.*
 
