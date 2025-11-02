@@ -1,4 +1,4 @@
-## BAT BAKERY
+### BAT BAKERY
 
 A spooky-themed bakery website for night owls, insomniacs, and dessert rebels who crave fresh bakes after dark. Features a complete dark theme with bat-inspired design, full responsive styling, and advanced JavaScript functionality.
 
@@ -141,6 +141,8 @@ bat-bakery/
 
 
 
+
+
 ## CSS SCREENSHOTS
 
 ### HOMEPAGE
@@ -177,6 +179,10 @@ bat-bakery/
 
 
 <img width="500" height="600" alt="css_location" src="https://github.com/user-attachments/assets/541273d8-a59e-4665-8fb0-01623494f14c" />
+
+
+
+
 
 
 ## JAVASCRIPT SCREENSHOTS
